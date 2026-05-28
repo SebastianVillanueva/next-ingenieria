@@ -1,26 +1,157 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colores hardcoded como fallback */
+body { background-color: #F8F7F4; }
+
+.bg-next-bg { background-color: #F8F7F4; }
+.bg-next-bg-alt { background-color: #EEECEA; }
+.bg-next-bg-logo { background-color: #F0EEE9; }
+.bg-next-black { background-color: #0A0A0A; }
+.text-next-black { color: #0A0A0A; }
+.text-next-text-on-dk { color: #F8F7F4; }
+.text-next-text-2 { color: #555555; }
+.text-next-text-3 { color: #666666; }
+.text-next-text-4 { color: #888888; }
+.text-next-text-5 { color: #AAAAAA; }
+.text-next-text-dk-2 { color: #2A2A2A; }
+.text-next-text-dk-3 { color: #444444; }
+.text-next-blue { color: #2563EB; }
+.text-next-gold { color: #C9A227; }
+.bg-next-gold { background-color: #C9A227; }
+.border-next-border { border-color: #D0CEC8; }
+.border-next-border-md { border-color: #C8C6C0; }
+.border-next-border-dk { border-color: #2A2A2A; }
+.border-next-border-xdk { border-color: #1E1E1E; }
+.font-display { font-family: var(--font-syne), sans-serif; }
+.font-mono { font-family: var(--font-dm-mono), monospace; }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-syne: "Syne", sans-serif;
+  --font-dm-mono: "DM Mono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F8F7F4;
+  color: #0A0A0A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #F8F7F4; }
+::-webkit-scrollbar-thumb { background: #D0CEC8; border-radius: 2px; }
+
+.hero-grid {
+  background-image:
+    linear-gradient(#D0CEC8 0.5px, transparent 0.5px),
+    linear-gradient(90deg, #D0CEC8 0.5px, transparent 0.5px);
+  background-size: 72px 72px;
+  opacity: 0.35;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 48px;
+  animation: marquee 22s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.layer-row {
+  display: flex;
+  flex-direction: column;
+  background: #111111;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.layer-row:hover { background: #1A1A1A; }
+
+.layer-bar {
+  background: #0A0A0A;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  min-width: 180px;
+  border-right: 0.5px solid #2A2A2A;
+  transition: background 0.2s;
+}
+.layer-row:hover .layer-bar { background: #161616; }
+
+.layer-num {
+  font-family: var(--font-dm-mono);
+  font-size: 28px;
+  font-weight: 800;
+  color: #2A2A2A;
+  line-height: 1;
+  margin-bottom: 6px;
+  transition: color 0.2s;
+}
+.layer-tag {
+  font-family: var(--font-dm-mono);
+  font-size: 9px;
+  color: #555555;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.layer-row:hover .layer-num { color: #F8F7F4; }
+.layer-row:hover .layer-tag { color: #F8F7F4; }
+
+.layer-included {
+  display: none;
+  padding: 14px 24px;
+  background: #0D0D0D;
+  border-top: 0.5px solid #2A2A2A;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.layer-row:hover .layer-included { display: flex; }
+
+.pstep {
+  background: #EEECEA;
+  padding: 32px 28px;
+  cursor: pointer;
+  border-top: 2px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+.pstep:hover { background: #E3E1DC; border-top-color: #0A0A0A; }
+
+.step-num {
+  font-size: 40px;
+  font-weight: 800;
+  color: #D8D6D0;
+  line-height: 1;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+  font-family: var(--font-syne);
+}
+.pstep:hover .step-num { color: #0A0A0A; }
+
+.blk-label {
+  font-family: var(--font-dm-mono);
+  font-size: 9px;
+  color: #888888;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.blk-label-dark {
+  font-family: var(--font-dm-mono);
+  font-size: 9px;
+  color: #444444;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
 }
