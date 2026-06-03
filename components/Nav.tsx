@@ -1,32 +1,29 @@
 "use client";
-import Button from "./Button";
+
+import Image from "next/image";
 
 const links = [
-  { label: "Systems", href: "#solution" },
-  { label: "Process", href: "#process" },
-  { label: "Cases", href: "#evidence" },
+  { label: "Método NEXT", href: "#solution" },
+  { label: "Casos de éxito", href: "#evidence" },
 ];
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 bg-next-bg border-b border-next-border">
-      <div className="flex items-center justify-between px-12 py-[22px]">
-        <a href="#hero" className="flex flex-col gap-[3px]" style={{ textDecoration: "none" }}>
-          <div className="w-8 h-6 bg-next-black" />
-          <span className="font-display font-extrabold text-[12px] text-next-black uppercase" style={{ letterSpacing: "0.22em" }}>
-            NEXT
-          </span>
-        </a>
-        <nav className="flex items-center gap-9">
+    <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: "transparent" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 48px" }}>
+        <nav style={{ display: "flex", alignItems: "center", gap: "32px" }}>
+          <a href="#contact" style={{ fontSize: "11px", color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", border: "0.5px solid rgba(10,10,10,0.6)", borderRadius: "5px", padding: "7px 14px" }}>
+            Evalúa tu sistema de producción
+          </a>
           {links.map((l) => (
-            <a key={l.label} href={l.href} className="font-mono text-[11px] text-next-text-4 uppercase hover:text-next-black transition-colors" style={{ textDecoration: "none", letterSpacing: "0.1em" }}>
+            <a key={l.label} href={l.href} style={{ fontSize: "11px", color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
               {l.label}
             </a>
           ))}
-          <Button variant="outline" href="#contact">
-            Agenda un diagnóstico
-          </Button>
         </nav>
+        <a href="#hero" style={{ textDecoration: "none" }}>
+          <Image src="/logo-next.png" alt="NEXT" width={72} height={66} style={{ objectFit: "contain" }} />
+        </a>
       </div>
     </header>
   );

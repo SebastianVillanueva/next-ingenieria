@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Colores hardcoded como fallback */
-body { background-color: #F8F7F4; }
+:root {
+  --font-syne: "Syne", sans-serif;
+  --font-dm-mono: "DM Mono", monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #F8F7F4;
+  color: #0A0A0A;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-display { font-family: Syne, sans-serif !important; }
+.font-mono { font-family: DM Mono, monospace !important; }
 
 .bg-next-bg { background-color: #F8F7F4; }
 .bg-next-bg-alt { background-color: #EEECEA; }
@@ -24,29 +38,6 @@ body { background-color: #F8F7F4; }
 .border-next-border-md { border-color: #C8C6C0; }
 .border-next-border-dk { border-color: #2A2A2A; }
 .border-next-border-xdk { border-color: #1E1E1E; }
-.font-display { font-family: var(--font-syne), sans-serif; }
-.font-mono { font-family: var(--font-dm-mono), monospace; }
-
-:root {
-  --font-syne: "Syne", sans-serif;
-  --font-dm-mono: "DM Mono", monospace;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #F8F7F4;
-  color: #0A0A0A;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
-
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #F8F7F4; }
-::-webkit-scrollbar-thumb { background: #D0CEC8; border-radius: 2px; }
 
 .hero-grid {
   background-image:
@@ -89,7 +80,7 @@ body {
 .layer-row:hover .layer-bar { background: #161616; }
 
 .layer-num {
-  font-family: var(--font-dm-mono);
+  font-family: DM Mono, monospace;
   font-size: 28px;
   font-weight: 800;
   color: #2A2A2A;
@@ -98,7 +89,7 @@ body {
   transition: color 0.2s;
 }
 .layer-tag {
-  font-family: var(--font-dm-mono);
+  font-family: DM Mono, monospace;
   font-size: 9px;
   color: #555555;
   letter-spacing: 0.15em;
@@ -129,18 +120,18 @@ body {
 .pstep:hover { background: #E3E1DC; border-top-color: #0A0A0A; }
 
 .step-num {
+  font-family: Syne, sans-serif;
   font-size: 40px;
   font-weight: 800;
   color: #D8D6D0;
   line-height: 1;
   margin-bottom: 20px;
   transition: color 0.2s;
-  font-family: var(--font-syne);
 }
 .pstep:hover .step-num { color: #0A0A0A; }
 
 .blk-label {
-  font-family: var(--font-dm-mono);
+  font-family: DM Mono, monospace;
   font-size: 9px;
   color: #888888;
   letter-spacing: 0.25em;
@@ -148,7 +139,7 @@ body {
   margin-bottom: 28px;
 }
 .blk-label-dark {
-  font-family: var(--font-dm-mono);
+  font-family: DM Mono, monospace;
   font-size: 9px;
   color: #444444;
   letter-spacing: 0.25em;

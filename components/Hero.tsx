@@ -1,61 +1,49 @@
 import Button from "./Button";
 
 const metrics = [
-  { value: "78%",   label: "PPC promedio · Sistema NEXT" },
-  { value: "4w",    label: "A visibilidad operativa completa" },
+  { value: "78%", label: "PPC promedio · Sistema NEXT" },
+  { value: "4w", label: "A visibilidad operativa completa" },
   { value: "~100K", label: "USD ahorro · Quellaveco" },
 ];
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative overflow-hidden bg-next-bg px-12 pt-[100px] pb-[96px] border-b border-next-border"
-    >
-      <div className="hero-grid absolute inset-0 pointer-events-none" />
+    <section id="hero" style={{ position: "relative", overflow: "hidden", padding: "0 48px", borderBottom: "0.5px solid rgba(208,206,200,0.3)", minHeight: "92vh", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
 
-      <p className="relative font-mono text-[10px] text-next-text-4 uppercase tracking-[0.2em] mb-5">
-        Operational Intelligence for Construction
-      </p>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/hero-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(248,247,244,0.92) 0%, rgba(248,247,244,0.88) 35%, rgba(248,247,244,0.1) 55%, rgba(248,247,244,0) 70%)", zIndex: 1 }} />
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%)", zIndex: 2 }} />
 
-      <h1 className="relative font-display font-extrabold text-[52px] leading-[1.0] tracking-[-0.03em] text-next-black max-w-[640px] mb-[18px]">
-        Operational Intelligence
-        <br />
-        for{" "}
-        <span className="border-b-[3px] border-next-black">development</span> &
-        <br />
-        construction.
-      </h1>
+      <div style={{ position: "relative", zIndex: 3, display: "flex", flexDirection: "column", paddingTop: "140px", maxWidth: "560px" }}>
 
-      <p className="relative font-mono text-[13px] text-next-text-2 leading-[1.8] max-w-[480px] mb-3">
-        NEXT diseña e instala sistemas operativos para constructoras e
-        inmobiliarias que necesitan mejorar confiabilidad, visibilidad y
-        capacidad de ejecución.
-      </p>
+        <h1 style={{ fontSize: "52px", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.02em", color: "#0A0A0A", maxWidth: "640px", marginBottom: "20px" }}>
+          Sistemas de producción para desarrolladoras y constructoras
+        </h1>
 
-      <p className="relative font-mono text-[11px] text-next-text-4 tracking-[0.1em] mb-12">
-        Planeamiento · Sistemas de producción · Métricas · Tecnología
-      </p>
+        <p style={{ fontSize: "18px", fontWeight: 600, color: "#333333", lineHeight: 1.5, maxWidth: "480px", marginBottom: "32px" }}>
+          Diseñados para controlar el plazo y reducir sobrecostos operativos
+        </p>
 
-      <div className="relative">
-        <Button variant="dark" href="#contact">
-          Agenda un diagnóstico operativo
-        </Button>
+        <div style={{ display: "inline-flex" }}>
+          <Button variant="dark" href="#contact">
+            Agenda un diagnóstico operativo
+          </Button>
+        </div>
       </div>
 
-      <div className="relative flex items-center gap-14 mt-20 pt-10 border-t border-next-border">
+      <div style={{ position: "relative", zIndex: 3, display: "flex", alignItems: "center", gap: "48px", paddingTop: "24px", paddingBottom: "28px", borderTop: "0.5px solid rgba(208,206,200,0.5)", maxWidth: "560px" }}>
         {metrics.map((m, i) => (
-          <div key={m.label} className="flex items-center gap-14">
+          <div key={m.label} style={{ display: "flex", alignItems: "center", gap: "48px" }}>
             <div>
-              <div className="font-display font-extrabold text-[32px] text-next-black leading-none">
+              <div style={{ fontSize: "28px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1 }}>
                 {m.value}
               </div>
-              <div className="font-mono text-[10px] text-next-text-4 uppercase tracking-[0.1em] mt-1">
+              <div style={{ fontSize: "9px", color: "#666666", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "4px" }}>
                 {m.label}
               </div>
             </div>
             {i < metrics.length - 1 && (
-              <div className="w-px h-10 bg-next-border" />
+              <div style={{ width: "1px", height: "36px", background: "#D0CEC8" }} />
             )}
           </div>
         ))}
