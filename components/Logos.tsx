@@ -1,28 +1,24 @@
+import Image from "next/image";
+
 const logos = [
-  "Quellaveco",
-  "Anglo American",
-  "Cosapi",
-  "Inmobiliaria B",
-  "Graña y Montero",
-  "JJC Contratistas",
-  "Constructora C",
+  { src: "/logo-cosapi.png", alt: "Cosapi" },
+  { src: "/logo-uk-healthcare.png", alt: "UK Healthcare Alliance" },
+  { src: "/logo-universidad-lima.png", alt: "Universidad de Lima" },
+  { src: "/logo-semcocad.png", alt: "SemcoCAD" },
 ];
 
 export default function Logos() {
   const track = [...logos, ...logos];
-
   return (
-    <section className="bg-next-bg-logo px-12 py-[52px] border-b border-next-border overflow-hidden">
-      <div className="blk-label">¿Quiénes confían en nosotros?</div>
-
-      <div className="overflow-hidden w-full">
+    <section style={{ backgroundColor: "#FFFFFF", padding: "48px 48px", borderBottom: "0.5px solid #D0CEC8", overflow: "hidden" }}>
+      <p style={{ textAlign: "center", fontSize: "13px", color: "#888888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "32px" }}>
+        Confían en nosotros
+      </p>
+      <div style={{ overflow: "hidden", width: "100%" }}>
         <div className="marquee-track">
-          {track.map((name, i) => (
-            <div
-              key={i}
-              className="font-mono text-[10px] text-next-text-5 uppercase tracking-[0.15em] whitespace-nowrap border border-next-border bg-next-bg-logo px-[22px] py-[9px] flex-shrink-0"
-            >
-              {name}
+          {track.map((logo, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, padding: "0 32px" }}>
+              <Image src={logo.src} alt={logo.alt} height={64} width={192} style={{ objectFit: "contain", opacity: 0.9 }} />
             </div>
           ))}
         </div>

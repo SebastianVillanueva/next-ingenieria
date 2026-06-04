@@ -1,10 +1,44 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+
+function FadeIn({ children, delay = 0, direction = "up" }: { children: React.ReactNode; delay?: number; direction?: "up" | "left" | "right" }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const getTransform = () => {
+    if (visible) return "translate(0, 0)";
+    if (direction === "left") return "translate(-40px, 0)";
+    if (direction === "right") return "translate(40px, 0)";
+    return "translate(0, 28px)";
+  };
+
+  return (
+    <div ref={ref} style={{
+      opacity: visible ? 1 : 0,
+      transform: getTransform(),
+      transition: `opacity 0.8s ease ${delay}ms, transform 0.8s ease ${delay}ms`,
+    }}>
+      {children}
+    </div>
+  );
+}
+
 const layers = [
   {
     num: "01",
     tag: "Planeamiento",
     title: "Production Planning & Management",
     desc: "Implementación de rutinas operativas y planificación colaborativa para aumentar confiabilidad y control de producción.",
-    result: "→ Visibilidad operativa en semanas",
+    result: "Visibilidad operativa en semanas",
     includes: [{ label: "Capa 01", highlight: false }],
     includeText: "LPS · Rutinas semanales · PPC · Causas de no cumplimiento",
   },
@@ -13,17 +47,17 @@ const layers = [
     tag: "Estrategia",
     title: "Operational Strategy & Metrics",
     desc: "Diseño de métricas y sistemas de seguimiento para conectar producción, plazo y resultados del negocio.",
-    result: "→ Decisiones basadas en datos, no percepción",
+    result: "Decisiones basadas en datos, no percepción",
     includes: [{ label: "Capa 01", highlight: false }, { label: "Capa 02", highlight: false }],
     includeText: "Todo lo anterior · Estrategia VDC · Métricas de producción · Sistema de información",
   },
   {
     num: "03",
-    tag: "Sistemas",
+    tag: "Sistemas Integrados",
     subTag: "Mayor complejidad",
     title: "Production System Design",
     desc: "Análisis de flujo, variabilidad y cuellos de botella para mejorar el desempeño operativo y atender proyectos más complejos.",
-    result: "→ Menor variabilidad · Mayor capacidad de ejecución",
+    result: "Menor variabilidad · Mayor capacidad de ejecución",
     includes: [{ label: "Capa 01", highlight: false }, { label: "Capa 02", highlight: false }, { label: "Capa 03", highlight: true }],
     includeText: "Sistema completo · PPM · Optimización de flujos · Simulación de escenarios",
   },
@@ -31,55 +65,62 @@ const layers = [
 
 export default function Solution() {
   return (
-    <section id="solution" className="bg-next-black px-12 py-20 border-b border-next-border-dk">
-      <div className="blk-label-dark">03 — La solución</div>
-      <div className="grid grid-cols-2 gap-12 items-end mb-3">
-        <h2 className="font-display font-extrabold text-[32px] leading-[1.05] text-next-text-on-dk" style={{ letterSpacing: "-0.02em" }}>
-          Tres capas acumulativas.<br />El diagnóstico define la entrada.
-        </h2>
-        <p className="font-mono text-[12px] text-next-text-2 leading-[1.8]">
-          En NEXT entendemos el problema y te ofrecemos una solución a la medida.
-        </p>
-      </div>
-      <p className="font-mono text-[10px] mb-6 pb-[18px] border-b border-next-border-xdk" style={{ color: "#333333", letterSpacing: "0.1em" }}>
-        Pasa el cursor sobre cada capa para ver qué incluye →
-      </p>
-      <div className="flex flex-col" style={{ gap: "1px", background: "#2A2A2A", border: "0.5px solid #2A2A2A" }}>
-        {layers.map((layer) => (
-          <div key={layer.num} className="layer-row">
-            <div className="flex" style={{ minHeight: "120px" }}>
-              <div className="layer-bar">
-                <div>
-                  <div className="layer-num">{layer.num}</div>
-                  <div className="layer-tag">{layer.tag}</div>
-                  {layer.subTag && (
-                    <div className="font-mono" style={{ fontSize: "8px", letterSpacing: "0.08em", marginTop: "5px", color: "#333333" }}>
-                      {layer.subTag}
+    <section id="solution" style={{ backgroundColor: "#0A0A0A", padding: "120px 48px", borderBottom: "0.5px solid #2A2A2A" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "64px" }}>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "start" }}>
+          <div>
+            <FadeIn delay={0}>
+              <h2 style={{ fontSize: "42px", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#F8F7F4", marginBottom: "48px" }}>
+                Nuestro Sistema
+              </h2>
+            </FadeIn>
+            <FadeIn delay={400}>
+              <p style={{ fontSize: "32px", fontWeight: 600, color: "#F8F7F4", lineHeight: 1.4, marginBottom: "12px" }}>
+                Tres capas acumulativas.
+              </p>
+              <p style={{ fontSize: "32px", fontWeight: 600, color: "#F8F7F4", lineHeight: 1.4 }}>
+                El diagnóstico define la entrada.
+              </p>
+            </FadeIn>
+          </div>
+          <FadeIn delay={800}>
+            <p style={{ fontSize: "20px", color: "#F8F7F4", lineHeight: 1.8, paddingTop: "8px" }}>
+              Un sistema operativo instalado por capas para desarrollar la capacidad operativa que los proyectos y organizaciones necesitan para crecer de forma confiable.
+            </p>
+          </FadeIn>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: "#2A2A2A", border: "0.5px solid #2A2A2A" }}>
+          {layers.map((layer, index) => (
+            <FadeIn key={layer.num} delay={index * 150} direction="left">
+              <div className="layer-row">
+                <div style={{ display: "flex", minHeight: "120px" }}>
+                  <div className="layer-bar">
+                    <div>
+                      <div className="layer-num">{layer.num}</div>
+                      <div className="layer-tag">{layer.tag}</div>
                     </div>
-                  )}
+                  </div>
+                  <div style={{ flex: 1, padding: "28px 32px" }}>
+                    <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#F8F7F4", marginBottom: "12px" }}>{layer.title}</h3>
+                    <p style={{ fontSize: "16px", color: "#555555", lineHeight: 1.8 }}>{layer.desc}</p>
+                  </div>
+                </div>
+                <div className="layer-included">
+                  {layer.includes.map((inc, i) => (
+                    <span key={inc.label} style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ fontSize: "9px", padding: "4px 10px", letterSpacing: "0.05em", color: inc.highlight ? "#F8F7F4" : "#888888", background: inc.highlight ? "#2A2A2A" : "#1A1A1A", border: inc.highlight ? "0.5px solid #666" : "0.5px solid #333" }}>{inc.label}</span>
+                      {i < layer.includes.length - 1 && <span style={{ color: "#333333", fontSize: "12px" }}>+</span>}
+                    </span>
+                  ))}
+                  <span style={{ fontSize: "11px", color: "#555555", marginLeft: "4px" }}>{layer.includeText}</span>
                 </div>
               </div>
-              <div className="flex-1 p-7">
-                <h3 className="font-display font-bold text-[15px] text-next-text-on-dk mb-3">{layer.title}</h3>
-                <p className="font-mono text-[11px] text-next-text-2 leading-[1.8]">{layer.desc}</p>
-                <p className="font-mono text-[10px] text-next-text-4 mt-3 pt-3" style={{ borderTop: "0.5px solid #1E1E1E" }}>{layer.result}</p>
-              </div>
-            </div>
-            <div className="layer-included">
-              {layer.includes.map((inc, i) => (
-                <span key={inc.label} className="flex items-center gap-2">
-                  <span className="font-mono text-[9px] px-[10px] py-1" style={{ letterSpacing: "0.05em", color: inc.highlight ? "#F8F7F4" : "#888888", background: inc.highlight ? "#2A2A2A" : "#1A1A1A", border: inc.highlight ? "0.5px solid #666" : "0.5px solid #333" }}>
-                    {inc.label}
-                  </span>
-                  {i < layer.includes.length - 1 && (
-                    <span className="font-mono text-[12px]" style={{ color: "#333333" }}>+</span>
-                  )}
-                </span>
-              ))}
-              <span className="font-mono text-[10px] text-next-text-2 ml-1">{layer.includeText}</span>
-            </div>
-          </div>
-        ))}
+            </FadeIn>
+          ))}
+        </div>
+
       </div>
     </section>
   );

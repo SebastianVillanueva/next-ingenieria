@@ -1,62 +1,67 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+
+function FadeIn({ children, delay = 0, direction = "up" }: { children: React.ReactNode; delay?: number; direction?: "up" | "left" | "right" }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const getTransform = () => {
+    if (visible) return "translate(0, 0)";
+    if (direction === "left") return "translate(-40px, 0)";
+    if (direction === "right") return "translate(40px, 0)";
+    return "translate(0, 28px)";
+  };
+
+  return (
+    <div ref={ref} style={{
+      opacity: visible ? 1 : 0,
+      transform: getTransform(),
+      transition: `opacity 0.8s ease ${delay}ms, transform 0.8s ease ${delay}ms`,
+    }}>
+      {children}
+    </div>
+  );
+}
+
 const steps = [
-  {
-    num: "01",
-    title: "Diagnóstico",
-    time: "1 – 2 semanas",
-    desc: "Identificamos la capa de entrada y el problema prioritario. Las problemáticas identificadas no son el problema. El problema se diagnostica.",
-  },
-  {
-    num: "02",
-    title: "Diseño del sistema",
-    time: "2 – 4 semanas",
-    desc: "Diseñamos el sistema operativo a la medida del proyecto u organización. Sistema documentado, equipo habilitado.",
-  },
-  {
-    num: "03",
-    title: "Instalación y medición",
-    time: "Desde semana 1",
-    desc: "Instalamos rutinas, métricas y sistemas de seguimiento directamente en la operación. La medición empieza desde la semana 1.",
-  },
+  { num: "01", title: "Diagnóstico", time: "1 – 2 semanas", desc: "Identificamos la capa de entrada y el problema prioritario. Las problemáticas identificadas no son el problema. El problema se diagnostica." },
+  { num: "02", title: "Diseño del sistema", time: "2 – 4 semanas", desc: "Diseñamos el sistema operativo a la medida del proyecto u organización. Sistema documentado, equipo habilitado." },
+  { num: "03", title: "Instalación y medición", time: "Desde semana 1", desc: "Instalamos rutinas, métricas y sistemas de seguimiento directamente en la operación. La medición empieza desde la semana 1." },
 ];
 
 export default function Process() {
   return (
-    <section
-      id="process"
-      className="bg-next-bg-alt px-12 py-20 border-b border-next-border"
-    >
-      <div className="blk-label">04 — Cómo opera NEXT</div>
+    <section id="process" style={{ backgroundColor: "#EEECEA", padding: "72px 48px 64px", borderBottom: "0.5px solid #D0CEC8" }}>
+      <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "40px" }}>
 
-      <h2 className="font-display font-extrabold text-[32px] tracking-[-0.02em] leading-[1.05] text-next-black mb-9">
-        Sistemas operativos instalados en campo.
-      </h2>
+        <FadeIn delay={0}>
+          <h2 style={{ fontSize: "42px", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#0A0A0A" }}>
+            Cómo operamos
+          </h2>
+        </FadeIn>
 
-      <div
-        className="grid grid-cols-3"
-        style={{ gap: "1px", background: "#C8C6C0", border: "0.5px solid #C8C6C0" }}
-      >
-        {steps.map((step, i) => (
-          <div
-            key={step.num}
-            className="pstep"
-            style={
-              i === 1
-                ? { borderLeft: "0.5px solid #C8C6C0", borderRight: "0.5px solid #C8C6C0" }
-                : {}
-            }
-          >
-            <div className="step-num">{step.num}</div>
-            <h3 className="font-display font-bold text-[16px] text-next-black mb-[6px]">
-              {step.title}
-            </h3>
-            <p className="font-mono text-[10px] text-next-text-4 uppercase tracking-[0.15em] mb-[14px]">
-              {step.time}
-            </p>
-            <p className="font-mono text-[11px] text-next-text-3 leading-[1.8]">
-              {step.desc}
-            </p>
-          </div>
-        ))}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1px", background: "#C8C6C0", border: "0.5px solid #C8C6C0" }}>
+          {steps.map((step, i) => (
+            <FadeIn key={step.num} delay={i * 200} direction="up">
+              <div className="pstep" style={i === 1 ? { borderLeft: "0.5px solid #C8C6C0", borderRight: "0.5px solid #C8C6C0" } : {}}>
+                <div className="step-num">{step.num}</div>
+                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#0A0A0A", marginBottom: "8px" }}>{step.title}</h3>
+                <p style={{ fontSize: "11px", color: "#888888", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px" }}>{step.time}</p>
+                <p style={{ fontSize: "15px", color: "#666666", lineHeight: 1.8 }}>{step.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
       </div>
     </section>
   );

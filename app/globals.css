@@ -81,7 +81,7 @@ body {
 
 .layer-num {
   font-family: DM Mono, monospace;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 800;
   color: #2A2A2A;
   line-height: 1;
@@ -90,7 +90,7 @@ body {
 }
 .layer-tag {
   font-family: DM Mono, monospace;
-  font-size: 9px;
+  font-size: 11px;
   color: #555555;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -132,7 +132,7 @@ body {
 
 .blk-label {
   font-family: DM Mono, monospace;
-  font-size: 9px;
+  font-size: 11px;
   color: #888888;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -140,7 +140,7 @@ body {
 }
 .blk-label-dark {
   font-family: DM Mono, monospace;
-  font-size: 9px;
+  font-size: 11px;
   color: #444444;
   letter-spacing: 0.25em;
   text-transform: uppercase;
