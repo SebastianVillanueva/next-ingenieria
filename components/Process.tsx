@@ -55,7 +55,7 @@ export default function Process() {
               </div>
             </FadeIn>
           ))}
-          <FadeIn delay={400} direction="up" style={{ height: "100%" }}>
+          <FadeIn delay={400} direction="up">
             <div style={{ position: "relative", minHeight: "280px", height: "100%", overflow: "hidden", background: "#0A0A0A" }}>
               <Image
                 src="/proceso-obra.jpg"
