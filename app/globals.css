@@ -109,6 +109,8 @@ body {
   flex-wrap: wrap;
 }
 .layer-row:hover .layer-included { display: flex; }
+.layer-row:hover p { color: #F8F7F4 !important; font-size: 18px !important; }
+.layer-row:hover span { color: #888888; }
 
 .pstep {
   background: #EEECEA;

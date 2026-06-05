@@ -2,7 +2,7 @@ import Button from "./Button";
 
 const metrics = [
   { value: "↓WIP  ↓TC", label: "Flujo óptimo" },
-  { value: "D < TH", label: "Confiabilidad" },
+  { value: "D < TH", label: "Confiabilidad de plazo" },
   { value: "≥ 5%", label: "Ahorro operativo" },
 ];
 
@@ -18,12 +18,12 @@ export default function Hero() {
         <h1 style={{ fontSize: "52px", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.02em", color: "#0A0A0A", maxWidth: "640px", marginBottom: "20px" }}>
           Sistemas de producción para desarrolladoras y constructoras
         </h1>
-        <p style={{ fontSize: "18px", fontWeight: 600, color: "#333333", lineHeight: 1.5, maxWidth: "480px", marginBottom: "32px" }}>
+        <p style={{ fontSize: "21px", fontWeight: 600, color: "#333333", lineHeight: 1.5, maxWidth: "480px", marginBottom: "32px" }}>
           Diseñados para controlar el plazo y reducir sobrecostos operativos
         </p>
         <div style={{ display: "inline-flex" }}>
           <Button variant="dark" href="#contact">
-            Agenda un diagnóstico operativo
+            Agenda un diagnóstico
           </Button>
         </div>
       </div>

@@ -36,30 +36,30 @@ const layers = [
   {
     num: "01",
     tag: "Planeamiento",
-    title: "Production Planning & Management",
+    title: "Planificación y Gestión de la Producción",
     desc: "Implementación de rutinas operativas y planificación colaborativa para aumentar confiabilidad y control de producción.",
     result: "Visibilidad operativa en semanas",
     includes: [{ label: "Capa 01", highlight: false }],
-    includeText: "LPS · Rutinas semanales · PPC · Causas de no cumplimiento",
+    includeText: "LPS · Rutinas semanales · PPC · Gestión de restricciones",
   },
   {
     num: "02",
     tag: "Estrategia",
-    title: "Operational Strategy & Metrics",
+    title: "Estrategia operacional y métricas",
     desc: "Diseño de métricas y sistemas de seguimiento para conectar producción, plazo y resultados del negocio.",
     result: "Decisiones basadas en datos, no percepción",
     includes: [{ label: "Capa 01", highlight: false }, { label: "Capa 02", highlight: false }],
-    includeText: "Todo lo anterior · Estrategia VDC · Métricas de producción · Sistema de información",
+    includeText: "Todo lo anterior · Estrategia VDC · Métricas · Sistemas de información",
   },
   {
     num: "03",
     tag: "Sistemas Integrados",
     subTag: "Mayor complejidad",
-    title: "Production System Design",
+    title: "Diseño y optimización del Sistema de Producción",
     desc: "Análisis de flujo, variabilidad y cuellos de botella para mejorar el desempeño operativo y atender proyectos más complejos.",
     result: "Menor variabilidad · Mayor capacidad de ejecución",
     includes: [{ label: "Capa 01", highlight: false }, { label: "Capa 02", highlight: false }, { label: "Capa 03", highlight: true }],
-    includeText: "Sistema completo · PPM · Optimización de flujos · Simulación de escenarios",
+    includeText: "Sistema completo · PPM · Optimización de flujos · Simulación de escenarios · Tecnología",
   },
 ];
 
@@ -104,7 +104,7 @@ export default function Solution() {
                   </div>
                   <div style={{ flex: 1, padding: "28px 32px" }}>
                     <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#F8F7F4", marginBottom: "12px" }}>{layer.title}</h3>
-                    <p style={{ fontSize: "16px", color: "#555555", lineHeight: 1.8 }}>{layer.desc}</p>
+                    <p style={{ fontSize: "16px", color: "#AAAAAA", lineHeight: 1.8 }}>{layer.desc}</p>
                   </div>
                 </div>
                 <div className="layer-included">
@@ -114,7 +114,7 @@ export default function Solution() {
                       {i < layer.includes.length - 1 && <span style={{ color: "#333333", fontSize: "12px" }}>+</span>}
                     </span>
                   ))}
-                  <span style={{ fontSize: "11px", color: "#555555", marginLeft: "4px" }}>{layer.includeText}</span>
+                  <span style={{ fontSize: "11px", color: "#F8F7F4", marginLeft: "4px" }}>{layer.includeText}</span>
                 </div>
               </div>
             </FadeIn>

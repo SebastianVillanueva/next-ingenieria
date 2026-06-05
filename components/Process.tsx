@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 function FadeIn({ children, delay = 0, direction = "up" }: { children: React.ReactNode; delay?: number; direction?: "up" | "left" | "right" }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
@@ -13,14 +13,12 @@ function FadeIn({ children, delay = 0, direction = "up" }: { children: React.Rea
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
-
   const getTransform = () => {
     if (visible) return "translate(0, 0)";
     if (direction === "left") return "translate(-40px, 0)";
     if (direction === "right") return "translate(40px, 0)";
     return "translate(0, 28px)";
   };
-
   return (
     <div ref={ref} style={{
       opacity: visible ? 1 : 0,
@@ -33,23 +31,20 @@ function FadeIn({ children, delay = 0, direction = "up" }: { children: React.Rea
 }
 
 const steps = [
-  { num: "01", title: "Diagnóstico", time: "1 – 2 semanas", desc: "Identificamos la capa de entrada y el problema prioritario. Las problemáticas identificadas no son el problema. El problema se diagnostica." },
-  { num: "02", title: "Diseño del sistema", time: "2 – 4 semanas", desc: "Diseñamos el sistema operativo a la medida del proyecto u organización. Sistema documentado, equipo habilitado." },
-  { num: "03", title: "Instalación y medición", time: "Desde semana 1", desc: "Instalamos rutinas, métricas y sistemas de seguimiento directamente en la operación. La medición empieza desde la semana 1." },
+  { num: "01", title: "Diagnóstico", time: "2 a 4 semanas", desc: "Identificamos la capa de entrada y el problema prioritario. Los síntomas identificados no son el problema, el problema se diagnostica." },
+  { num: "02", title: "Diseño e Implementación", time: "3 a 12 meses", desc: "Diseñamos el sistema operativo a la medida del proyecto u organización. Sistema documentado, equipo habilitado." },
 ];
 
 export default function Process() {
   return (
     <section id="process" style={{ backgroundColor: "#EEECEA", padding: "72px 48px 64px", borderBottom: "0.5px solid #D0CEC8" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "40px" }}>
-
         <FadeIn delay={0}>
           <h2 style={{ fontSize: "42px", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#0A0A0A" }}>
             Cómo operamos
           </h2>
         </FadeIn>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1px", background: "#C8C6C0", border: "0.5px solid #C8C6C0" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1px", background: "#C8C6C0", border: "0.5px solid #C8C6C0", overflow: "hidden", borderRadius: "4px" }}>
           {steps.map((step, i) => (
             <FadeIn key={step.num} delay={i * 200} direction="up">
               <div className="pstep" style={i === 1 ? { borderLeft: "0.5px solid #C8C6C0", borderRight: "0.5px solid #C8C6C0" } : {}}>
@@ -60,8 +55,18 @@ export default function Process() {
               </div>
             </FadeIn>
           ))}
+          <FadeIn delay={400} direction="up" style={{ height: "100%" }}>
+            <div style={{ position: "relative", minHeight: "280px", height: "100%", overflow: "hidden", background: "#0A0A0A" }}>
+              <Image
+                src="/proceso-obra.jpg"
+                alt="NEXT en obra"
+                fill
+                sizes="33vw"
+                style={{ objectFit: "cover", objectPosition: "center bottom" }}
+              />
+            </div>
+          </FadeIn>
         </div>
-
       </div>
     </section>
   );

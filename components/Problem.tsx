@@ -33,29 +33,29 @@ function FadeIn({ children, delay = 0, direction = "up" }: { children: React.Rea
 }
 
 const symptoms1 = [
-  "El flujo de caja se vuelve más sensible.",
-  "El costo financiero de la operación aumenta.",
-  "El plazo empieza a convertirse en una fuente constante de presión.",
+  "El flujo de caja se vuelve más sensible",
+  "El costo financiero de la operación aumenta",
+  "El plazo empieza a convertirse en una fuente constante de presión",
 ];
 
 const symptoms2 = [
-  "La información no llega a tiempo para tomar decisiones.",
-  "El avance de producción no refleja el costo operativo semanal.",
-  "Y para recuperar el cronograma normalmente se asignan más recursos, más presión y más costo operativo.",
+  "La información no llega a tiempo para tomar decisiones",
+  "El avance de producción no refleja el costo operativo semanal",
+  "Y para recuperar el cronograma normalmente se asignan más recursos, más presión y más costo operativo",
 ];
 
 export default function Problem() {
   return (
-    <section id="problem" style={{ backgroundColor: "#EEECEA", padding: "120px 48px", borderBottom: "0.5px solid #D0CEC8" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "80px" }}>
+    <section id="problem" style={{ backgroundColor: "#EEECEA", padding: "80px 96px 48px 96px", borderBottom: "0.5px solid #D0CEC8" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "40px" }}>
 
         {/* Grupo 1 — H1 centrado */}
         <FadeIn delay={0}>
-          <h2 style={{ fontSize: "48px", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.03em", color: "#0A0A0A", textAlign: "center", whiteSpace: "nowrap" }}>
-            Los proyectos son cada vez más complejos y exigentes.
+          <h2 style={{ fontSize: "38px", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.03em", color: "#0A0A0A", textAlign: "center", whiteSpace: "nowrap" }}>
+            Los proyectos son cada vez más complejos y exigentes
           </h2>
-          <p style={{ fontSize: "38px", fontWeight: 800, color: "#2563EB", textAlign: "center", marginTop: "16px", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
-            Las operaciones no siempre evolucionan al mismo ritmo.
+          <p style={{ fontSize: "30px", fontWeight: 800, color: "#2563EB", textAlign: "center", marginTop: "16px", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+            Las operaciones no siempre evolucionan al mismo ritmo
           </p>
         </FadeIn>
 
@@ -92,11 +92,10 @@ export default function Problem() {
         {/* Grupo 5 — Cierre */}
         <FadeIn delay={0}>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px", paddingTop: "20px", borderTop: "0.5px solid #C8C6C0", maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-            <p style={{ fontSize: "26px", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.7 }}>
-              El problema empieza cuando la complejidad crece más rápido que la capacidad operativa de la organización.
+            <p style={{ fontSize: "30px", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.7 }}>
+              El problema empieza cuando la complejidad crece más rápido que la capacidad operativa de la organización
             </p>
             <p style={{ fontSize: "24px", color: "#0A0A0A", lineHeight: 1.7 }}>
-              Lo que hoy es un problema de proyecto, mañana se convierte en una limitación para el crecimiento de toda la organización.
             </p>
           </div>
         </FadeIn>
