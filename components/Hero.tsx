@@ -8,39 +8,41 @@ const metrics = [
 
 export default function Hero() {
   return (
-    <section id="hero" style={{ position: "relative", overflow: "hidden", padding: "0 48px", borderBottom: "0.5px solid rgba(208,206,200,0.3)", minHeight: "92vh", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+    <section
+      id="hero"
+      className="relative overflow-hidden px-6 md:px-12 border-b border-[rgba(208,206,200,0.3)] min-h-[100svh] md:min-h-[92vh] flex flex-col justify-between"
+    >
+      <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(248,247,244,0.92)] via-[rgba(248,247,244,0.88)] to-[rgba(248,247,244,0)] z-[1]" />
+      <div className="absolute top-0 left-0 right-0 h-[120px] bg-gradient-to-b from-[rgba(0,0,0,0.15)] to-transparent z-[2]" />
 
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/hero-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(248,247,244,0.92) 0%, rgba(248,247,244,0.88) 35%, rgba(248,247,244,0.1) 55%, rgba(248,247,244,0) 70%)", zIndex: 1 }} />
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%)", zIndex: 2 }} />
-
-      <div style={{ position: "relative", zIndex: 3, display: "flex", flexDirection: "column", paddingTop: "140px", maxWidth: "560px" }}>
-        <h1 style={{ fontSize: "52px", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.02em", color: "#0A0A0A", maxWidth: "640px", marginBottom: "20px" }}>
+      <div className="relative z-[3] flex flex-col pt-[100px] md:pt-[140px] max-w-[560px]">
+        <h1 className="text-[36px] md:text-[52px] font-extrabold leading-[1.02] tracking-[-0.02em] text-[#0A0A0A] mb-5">
           Sistemas de producción para desarrolladoras y constructoras
         </h1>
-        <p style={{ fontSize: "21px", fontWeight: 600, color: "#333333", lineHeight: 1.5, maxWidth: "480px", marginBottom: "32px" }}>
+        <p className="text-[17px] md:text-[21px] font-semibold text-[#333333] leading-relaxed max-w-[480px] mb-8">
           Diseñados para controlar el plazo y reducir sobrecostos operativos
         </p>
-        <div style={{ display: "inline-flex" }}>
+        <div className="inline-flex">
           <Button variant="dark" href="#contact">
             Agenda un diagnóstico
           </Button>
         </div>
       </div>
 
-      <div style={{ position: "relative", zIndex: 3, display: "flex", alignItems: "center", gap: "48px", paddingTop: "24px", paddingBottom: "28px", borderTop: "0.5px solid rgba(208,206,200,0.5)", maxWidth: "560px" }}>
+      <div className="relative z-[3] flex flex-col md:flex-row md:items-center gap-4 md:gap-12 pt-6 pb-7 border-t border-[rgba(208,206,200,0.5)] max-w-[560px]">
         {metrics.map((m, i) => (
-          <div key={m.label} style={{ display: "flex", alignItems: "center", gap: "48px" }}>
-            <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1 }}>
+          <div key={m.label} className="flex items-center gap-12">
+            <div className="text-center">
+              <div className="text-[20px] md:text-[22px] font-extrabold text-[#0A0A0A] leading-none">
                 {m.value}
               </div>
-              <div style={{ fontSize: "9px", color: "#666666", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "4px" }}>
+              <div className="text-[9px] text-[#666666] uppercase tracking-widest mt-1">
                 {m.label}
               </div>
             </div>
             {i < metrics.length - 1 && (
-              <div style={{ width: "1px", height: "36px", background: "#D0CEC8" }} />
+              <div className="hidden md:block w-px h-9 bg-[#D0CEC8]" />
             )}
           </div>
         ))}
