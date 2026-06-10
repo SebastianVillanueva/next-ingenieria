@@ -20,7 +20,11 @@ function FadeIn({ children, delay = 0, direction = "up" }: { children: React.Rea
     return "translate(0, 28px)";
   };
   return (
-    <div ref={ref} style={{ opacity: visible ? 1 : 0, transform: getTransform(), transition: `opacity 0.8s ease ${delay}ms, transform 0.8s ease ${delay}ms` }}>
+    <div ref={ref} style={{
+      opacity: visible ? 1 : 0,
+      transform: getTransform(),
+      transition: `opacity 0.8s ease ${delay}ms, transform 0.8s ease ${delay}ms`,
+    }}>
       {children}
     </div>
   );
@@ -33,39 +37,36 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="bg-[#EEECEA] px-6 md:px-12 pt-12 md:pt-[72px] pb-10 md:pb-16 border-b border-[#D0CEC8]">
-      <div className="max-w-[900px] mx-auto flex flex-col gap-10">
-
+    <section id="process" style={{ backgroundColor: "#EEECEA", padding: "72px 48px 64px", borderBottom: "0.5px solid #D0CEC8" }}>
+      <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "40px" }}>
         <FadeIn delay={0}>
-          <h2 className="text-[32px] md:text-[42px] font-extrabold leading-none tracking-[-0.03em] text-[#0A0A0A]">
+          <h2 style={{ fontSize: "42px", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#0A0A0A" }}>
             Cómo operamos
           </h2>
         </FadeIn>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#C8C6C0] border border-[#C8C6C0] overflow-hidden rounded-[4px]">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1px", background: "#C8C6C0", border: "0.5px solid #C8C6C0", overflow: "hidden", borderRadius: "4px" }}>
           {steps.map((step, i) => (
             <FadeIn key={step.num} delay={i * 200} direction="up">
-              <div className="pstep h-full">
+              <div className="pstep" style={i === 1 ? { borderLeft: "0.5px solid #C8C6C0", borderRight: "0.5px solid #C8C6C0" } : {}}>
                 <div className="step-num">{step.num}</div>
-                <h3 className="text-[18px] md:text-[20px] font-bold text-[#0A0A0A] mb-2">{step.title}</h3>
-                <p className="text-[10px] md:text-[11px] text-[#888888] uppercase tracking-[0.15em] mb-4">{step.time}</p>
-                <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed">{step.desc}</p>
+                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#0A0A0A", marginBottom: "8px" }}>{step.title}</h3>
+                <p style={{ fontSize: "11px", color: "#888888", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px" }}>{step.time}</p>
+                <p style={{ fontSize: "15px", color: "#666666", lineHeight: 1.8 }}>{step.desc}</p>
               </div>
             </FadeIn>
           ))}
           <FadeIn delay={400} direction="up">
-            <div className="relative h-[200px] md:h-full md:min-h-[280px] overflow-hidden bg-[#0A0A0A]">
+            <div style={{ position: "relative", minHeight: "280px", height: "100%", overflow: "hidden", background: "#0A0A0A" }}>
               <Image
                 src="/proceso-obra.jpg"
                 alt="NEXT en obra"
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="33vw"
                 style={{ objectFit: "cover", objectPosition: "center bottom" }}
               />
             </div>
           </FadeIn>
         </div>
-
       </div>
     </section>
   );

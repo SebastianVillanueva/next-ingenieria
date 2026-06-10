@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Button from "./Button";
 
 const FORMSPREE_URL = "https://formspree.io/f/mnjynrjd";
 
@@ -27,6 +28,8 @@ function FadeIn({ children, direction = "up" }: { children: React.ReactNode; dir
   );
 }
 
+const arrow = String.fromCharCode(8594);
+
 export default function Evidence() {
   const [showModal, setShowModal] = useState(false);
   const [leadForm, setLeadForm] = useState({ nombre: "", email: "" });
@@ -35,7 +38,7 @@ export default function Evidence() {
   const handleDownload = async () => {
     await fetch(FORMSPREE_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({ ...leadForm, tipo: "Descarga presentacion Quellaveco" }),
     });
     setLeadSubmitted(true);
@@ -45,129 +48,137 @@ export default function Evidence() {
     link.click();
     setTimeout(() => { setShowModal(false); setLeadSubmitted(false); setLeadForm({ nombre: "", email: "" }); }, 2000);
   };
-
   return (
-    <section id="evidence" className="bg-[#F8F7F4] px-6 md:px-12 py-14 md:py-20 border-b border-[#D0CEC8]">
-      <h2 className="text-[30px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-tight text-[#0A0A0A] mb-10 md:mb-[72px]">
+    <section id="evidence" style={{ backgroundColor: "#F8F7F4", padding: "80px 48px", borderBottom: "0.5px solid #D0CEC8" }}>
+
+      <h2 style={{ fontSize: "42px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#0A0A0A", marginBottom: "72px" }}>
         Resultados operacionales medidos
       </h2>
 
       <FadeIn direction="right">
-        <div className="bg-[#EEECEA] border border-[#C8C6C0] rounded-[12px] p-4 md:p-7 grid grid-cols-1 md:grid-cols-[1fr_0.6fr] gap-4 md:gap-7 max-w-[1100px] mx-auto">
+      <div style={{ background: "#EEECEA", border: "0.5px solid #C8C6C0", borderRadius: "12px", padding: "28px", display: "grid", gridTemplateColumns: "1fr 0.6fr", gap: "28px", alignItems: "stretch", maxWidth: "1100px", margin: "0 auto" }}>
 
-          {/* FICHA INTERIOR */}
-          <div className="bg-[#F8F7F4] border border-[#C8C6C0] rounded-[8px] overflow-hidden flex flex-col">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="p-5 flex flex-col gap-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <img src="/logo-cosapi.png" alt="COSAPI" className="h-8 object-contain" />
-                  <img src="/logo-angloamerican.png" alt="Anglo American" className="h-8 object-contain" />
-                </div>
-                <h3 className="text-[18px] md:text-[21px] font-extrabold text-[#0A0A0A] leading-snug m-0">
-                  Diseño y optimización de un sistema de producción complejo
-                </h3>
-                <p className="text-[13px] md:text-[14px] text-[#888888] leading-relaxed m-0 tracking-wide">
-                  Torre de Captación 04 · Obra civil · Quellaveco
-                </p>
-                <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed m-0">
-                  Sistema instalado para reducir variabilidad operativa y mejorar el flujo de producción.
-                </p>
+        {/* FICHA INTERIOR */}
+        <div style={{ background: "#F8F7F4", border: "0.5px solid #C8C6C0", borderRadius: "8px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+
+          {/* Grid: info izquierda, foto derecha hasta borde */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", flex: 1 }}>
+            <div style={{ padding: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
+              {/* Logos */}
+              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
+                <img src="/logo-cosapi.png" alt="COSAPI" style={{ height: "32px", objectFit: "contain" }} />
+                <img src="/logo-angloamerican.png" alt="Anglo American" style={{ height: "32px", objectFit: "contain" }} />
               </div>
-              <div className="relative bg-[#111827] h-[220px] md:h-auto md:min-h-[280px]">
-                <Image src="/quellaveco1.jpg" alt="Proyecto Quellaveco" fill sizes="(max-width: 768px) 100vw, 25vw" style={{ objectFit: "cover", objectPosition: "center" }} />
-              </div>
+              <h3 style={{ fontSize: "21px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1.2, margin: 0 }}>
+                Diseño y optimización de un sistema de producción complejo
+              </h3>
+              <p style={{ fontSize: "14px", color: "#888888", lineHeight: 1.6, margin: 0, letterSpacing: "0.05em" }}>
+                Torre de Captación 04 · Obra civil · Quellaveco
+              </p>
+              <p style={{ fontSize: "15px", color: "#666666", lineHeight: 1.8, margin: 0 }}>
+                Sistema instalado para reducir variabilidad operativa y mejorar el flujo de producción. Medición directa de la torre grúa como proxy del sistema.
+              </p>
             </div>
-
-            {/* Métricas */}
-            <div className="grid grid-cols-3 bg-[#0A0A0A] border-t border-[#2A2A2A]">
-              {[
-                { val: "~95K", label: "USD ahorro operacional (~5%)" },
-                { val: "9 dias", label: "Optimización de plazo" },
-                { val: "15%", label: "Reducción ciclo TG 18.8 → 16 min/mov" },
-              ].map((m, i) => (
-                <div key={i} className={`p-4 md:p-[18px] ${i < 2 ? "border-r border-[#2A2A2A]" : ""}`}>
-                  <div className="text-[18px] md:text-[22px] font-extrabold text-[#F8F7F4] leading-none mb-1">{m.val}</div>
-                  <div className="text-[8px] md:text-[9px] text-[#F8F7F4] tracking-widest uppercase leading-snug">{m.label}</div>
-                </div>
-              ))}
+            <div style={{ position: "relative", background: "#111827", minHeight: "320px" }}>
+              <Image src="/quellaveco1.jpg" alt="Proyecto Quellaveco" fill sizes="25vw" style={{ objectFit: "cover", objectPosition: "center" }} />
             </div>
           </div>
 
-          {/* DERECHA - Informe VDC */}
-          <div className="flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#C8C6C0]">
-                <img src="/logo-universidad-lima.png" alt="Universidad de Lima" className="h-12 object-contain" />
-                <img src="/logo-stanford.png" alt="Stanford Engineering" className="h-12 object-contain" />
-              </div>
-              <p className="text-[13px] text-[#888888] tracking-wide mb-2">Certificación Diseño y Construcción Virtual (VDC) 2026</p>
-              <h3 className="text-[20px] md:text-[22px] font-extrabold text-[#0A0A0A] leading-snug mb-2">
-                Gestión de Producción de Proyectos (PPM)
-              </h3>
-              <p className="text-[15px] text-[#888888] leading-relaxed mb-6">Presentación en Semana Introductoria</p>
-              <div className="flex flex-col mb-6">
-                {[["Autor", "Sebastian Villanueva"], ["Rol", "Mentor VDC"]].map(([k, v]) => (
-                  <div key={k} className="flex justify-between items-baseline border-b border-[#D0CEC8] py-2 pr-3">
-                    <span className="text-[10px] text-[#888888] tracking-widest uppercase">{k}</span>
-                    <span className="text-[14px] text-[#0A0A0A] font-medium text-right">{v}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-[14px] text-[#666666] leading-relaxed pr-3">
-                Caso de estudio presentado en la certificación VDC 2026. Análisis de variabilidad operativa en proyecto de infraestructura minera, con metodología PPM aplicada en campo.
-              </p>
+          {/* Métricas */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 0.5px 1fr 0.5px 1fr", background: "#0A0A0A", borderTop: "0.5px solid #2A2A2A" }}>
+            <div style={{ padding: "18px 20px" }}>
+              <div style={{ fontSize: "22px", fontWeight: 800, color: "#F8F7F4", lineHeight: 1, marginBottom: "5px" }}>~95K</div>
+              <div style={{ fontSize: "9px", color: "#F8F7F4", letterSpacing: "0.1em", textTransform: "uppercase", lineHeight: 1.5 }}>USD ahorro operacional (~5%)</div>
             </div>
-            <div className="mt-8 pt-6 border-t border-[#C8C6C0] flex justify-end">
-              <button
-                onClick={() => setShowModal(true)}
-                className="inline-flex items-center gap-2 pl-3 pr-2 py-1.5 rounded-[6px] text-[10px] font-medium tracking-widest uppercase cursor-pointer bg-[#0A0A0A] text-[#F8F7F4] border-none"
-              >
-                Descargar presentación
-                <span className="w-[18px] h-[18px] rounded-full bg-[#C9A227] flex items-center justify-center text-[10px] text-[#0A0A0A]">→</span>
-              </button>
+            <div style={{ background: "#2A2A2A" }} />
+            <div style={{ padding: "18px 20px" }}>
+              <div style={{ fontSize: "22px", fontWeight: 800, color: "#F8F7F4", lineHeight: 1, marginBottom: "5px" }}>9 dias</div>
+              <div style={{ fontSize: "9px", color: "#F8F7F4", letterSpacing: "0.1em", textTransform: "uppercase", lineHeight: 1.5 }}>Optimización de plazo</div>
+            </div>
+            <div style={{ background: "#2A2A2A" }} />
+            <div style={{ padding: "18px 20px" }}>
+              <div style={{ fontSize: "22px", fontWeight: 800, color: "#F8F7F4", lineHeight: 1, marginBottom: "5px" }}>15%</div>
+              <div style={{ fontSize: "9px", color: "#F8F7F4", letterSpacing: "0.1em", textTransform: "uppercase", lineHeight: 1.5 }}>Reducción ciclo TG 18.8 → 16 min/mov</div>
             </div>
           </div>
         </div>
-      </FadeIn>
 
-      {showModal && (
-        <div className="fixed inset-0 bg-[rgba(0,0,0,0.7)] z-[1000] flex items-center justify-center">
-          <div className="bg-[#EEECEA] rounded-[12px] p-10 max-w-[420px] w-[90%] relative">
-            <button onClick={() => setShowModal(false)} className="absolute top-4 right-5 bg-none border-none text-xl cursor-pointer text-[#888]">✕</button>
-            {!leadSubmitted ? (
-              <>
-                <p className="text-[9px] text-[#888] tracking-[0.2em] uppercase mb-3">Caso de estudio</p>
-                <h3 className="text-[22px] font-extrabold text-[#0A0A0A] mb-2 leading-snug">Descarga la presentación</h3>
-                <p className="text-[13px] text-[#666] leading-relaxed mb-7">Ingresa tus datos para acceder al caso Quellaveco — Torre de Captación 04.</p>
-                <div className="border-b border-[#C8C6C0] py-3">
-                  <label className="block text-[9px] text-[#888] uppercase tracking-[0.2em] mb-1">Nombre completo</label>
-                  <input type="text" placeholder="Tu nombre completo" value={leadForm.nombre} onChange={(e) => setLeadForm(p => ({ ...p, nombre: e.target.value }))} className="w-full bg-transparent text-[14px] text-[#0A0A0A] outline-none border-none" />
+        {/* DERECHA - Informe VDC */}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <div>
+            {/* Logos sin separador */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "16px", marginBottom: "32px", paddingBottom: "24px", borderBottom: "0.5px solid #C8C6C0", width: "100%" }}>
+              <img src="/logo-universidad-lima.png" alt="Universidad de Lima" style={{ height: "52px", objectFit: "contain" }} />
+              <img src="/logo-stanford.png" alt="Stanford Engineering" style={{ height: "52px", objectFit: "contain", objectPosition: "right", flexShrink: 0 }} />
+            </div>
+            <p style={{ fontSize: "14px", color: "#888888", letterSpacing: "0.05em", marginBottom: "8px" }}>Certificación Diseño y Construcción Virtual (VDC) 2026</p>
+            <h3 style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1.2, margin: "0 0 8px 0" }}>
+              Gestión de Producción de Proyectos (PPM)
+            </h3>
+            <p style={{ fontSize: "16px", color: "#888888", lineHeight: 1.6, margin: "0 0 24px 0" }}>
+              Presentación en Semana Introductoria
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", marginBottom: "24px" }}>
+              {[["Autor", "Sebastian Villanueva"], ["Rol", "Mentor VDC"]].map(([k, v]) => (
+                <div key={k} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "0.5px solid #D0CEC8", padding: "10px 0", paddingRight: "12px" }}>
+                  <span style={{ fontSize: "10px", color: "#888888", letterSpacing: "0.1em", textTransform: "uppercase" }}>{k}</span>
+                  <span style={{ fontSize: "15px", color: "#0A0A0A", fontWeight: 500, textAlign: "right", maxWidth: "100%" }}>{v}</span>
                 </div>
-                <div className="border-b border-[#C8C6C0] py-3">
-                  <label className="block text-[9px] text-[#888] uppercase tracking-[0.2em] mb-1">Correo o número celular</label>
-                  <input type="text" placeholder="Tu correo o celular" value={leadForm.email} onChange={(e) => setLeadForm(p => ({ ...p, email: e.target.value }))} className="w-full bg-transparent text-[14px] text-[#0A0A0A] outline-none border-none" />
+              ))}
+            </div>
+            <p style={{ fontSize: "15px", color: "#666666", lineHeight: 1.8, paddingRight: "12px" }}>
+              Caso de estudio presentado en la certificación VDC 2026. Análisis de variabilidad operativa en proyecto de infraestructura minera, con metodología PPM aplicada en campo.
+            </p>
+          </div>
+          <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "0.5px solid #C8C6C0", display: "flex", justifyContent: "flex-end" }}>
+            <button onClick={() => setShowModal(true)} style={{ display: "inline-flex", alignItems: "center", gap: "8px", paddingLeft: "14px", paddingRight: "8px", paddingTop: "7px", paddingBottom: "7px", borderRadius: "6px", fontSize: "10px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", background: "#0A0A0A", color: "#F8F7F4", border: "none" }}>
+              Descargar presentación
+              <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "#C9A227", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "10px", color: "#0A0A0A" }}>&#8594;</span>
+            </button>
+
+            {showModal && (
+              <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ background: "#EEECEA", borderRadius: "12px", padding: "40px", maxWidth: "420px", width: "90%", position: "relative" }}>
+                  <button onClick={() => setShowModal(false)} style={{ position: "absolute", top: "16px", right: "20px", background: "none", border: "none", fontSize: "20px", cursor: "pointer", color: "#888" }}>&#x2715;</button>
+                  {!leadSubmitted ? (
+                    <>
+                      <p style={{ fontSize: "9px", color: "#888", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "12px" }}>Caso de estudio</p>
+                      <h3 style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", marginBottom: "8px", lineHeight: 1.2 }}>Descarga la presentación</h3>
+                      <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.7, marginBottom: "28px" }}>Ingresa tus datos para acceder al caso Quellaveco — Torre de Captación 04.</p>
+                      <div style={{ borderBottom: "0.5px solid #C8C6C0", padding: "12px 0" }}>
+                        <label style={{ display: "block", fontSize: "9px", color: "#888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "6px" }}>Nombre completo</label>
+                        <input type="text" placeholder="Tu nombre completo" value={leadForm.nombre} onChange={(e) => setLeadForm(p => ({ ...p, nombre: e.target.value }))} style={{ width: "100%", background: "transparent", fontSize: "14px", color: "#0A0A0A", outline: "none", border: "none" }} />
+                      </div>
+                      <div style={{ borderBottom: "0.5px solid #C8C6C0", padding: "12px 0" }}>
+                        <label style={{ display: "block", fontSize: "9px", color: "#888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "6px" }}>Correo o número celular</label>
+                        <input type="text" placeholder="Tu correo o celular" value={leadForm.email} onChange={(e) => setLeadForm(p => ({ ...p, email: e.target.value }))} style={{ width: "100%", background: "transparent", fontSize: "14px", color: "#0A0A0A", outline: "none", border: "none" }} />
+                      </div>
+                      <div style={{ padding: "16px 0", marginBottom: "8px" }}>
+                        <label style={{ display: "block", fontSize: "9px", color: "#888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "12px" }}>¿Te gustaría que te contactemos?</label>
+                        <div style={{ display: "flex", gap: "16px" }}>
+                          <button onClick={() => setLeadForm(p => ({ ...p, contactar: "si" }))} style={{ flex: 1, padding: "10px", borderRadius: "6px", border: (leadForm as any).contactar === "si" ? "1.5px solid #0A0A0A" : "0.5px solid #C8C6C0", background: (leadForm as any).contactar === "si" ? "#0A0A0A" : "transparent", color: (leadForm as any).contactar === "si" ? "#F8F7F4" : "#0A0A0A", fontSize: "12px", fontWeight: 600, cursor: "pointer", letterSpacing: "0.05em" }}>Sí</button>
+                          <button onClick={() => setLeadForm(p => ({ ...p, contactar: "no" }))} style={{ flex: 1, padding: "10px", borderRadius: "6px", border: (leadForm as any).contactar === "no" ? "1.5px solid #0A0A0A" : "0.5px solid #C8C6C0", background: (leadForm as any).contactar === "no" ? "#0A0A0A" : "transparent", color: (leadForm as any).contactar === "no" ? "#F8F7F4" : "#0A0A0A", fontSize: "12px", fontWeight: 600, cursor: "pointer", letterSpacing: "0.05em" }}>No por ahora</button>
+                        </div>
+                      </div>
+                      <button onClick={handleDownload} style={{ display: "inline-flex", alignItems: "center", gap: "8px", paddingLeft: "14px", paddingRight: "8px", paddingTop: "7px", paddingBottom: "7px", borderRadius: "6px", fontSize: "10px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", background: "#0A0A0A", color: "#F8F7F4", border: "none" }}>
+                        Descargar ahora
+                        <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "#C9A227", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "10px", color: "#0A0A0A" }}>&#8594;</span>
+                      </button>
+                    </>
+                  ) : (
+                    <div style={{ textAlign: "center", padding: "20px 0" }}>
+                      <p style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", marginBottom: "8px" }}>Descargando...</p>
+                      <p style={{ fontSize: "13px", color: "#666" }}>Gracias. El PDF se esta descargando.</p>
+                    </div>
+                  )}
                 </div>
-                <div className="py-4 mb-2">
-                  <label className="block text-[9px] text-[#888] uppercase tracking-[0.2em] mb-3">¿Te gustaría que te contactemos?</label>
-                  <div className="flex gap-4">
-                    <button onClick={() => setLeadForm(p => ({ ...p, contactar: "si" } as any))} className={`flex-1 py-2.5 rounded-[6px] text-[12px] font-semibold cursor-pointer tracking-wide ${(leadForm as any).contactar === "si" ? "border-[1.5px] border-[#0A0A0A] bg-[#0A0A0A] text-[#F8F7F4]" : "border border-[#C8C6C0] bg-transparent text-[#0A0A0A]"}`}>Sí</button>
-                    <button onClick={() => setLeadForm(p => ({ ...p, contactar: "no" } as any))} className={`flex-1 py-2.5 rounded-[6px] text-[12px] font-semibold cursor-pointer tracking-wide ${(leadForm as any).contactar === "no" ? "border-[1.5px] border-[#0A0A0A] bg-[#0A0A0A] text-[#F8F7F4]" : "border border-[#C8C6C0] bg-transparent text-[#0A0A0A]"}`}>No por ahora</button>
-                  </div>
-                </div>
-                <button onClick={handleDownload} className="inline-flex items-center gap-2 pl-3 pr-2 py-1.5 rounded-[6px] text-[10px] font-medium tracking-widest uppercase cursor-pointer bg-[#0A0A0A] text-[#F8F7F4] border-none">
-                  Descargar ahora
-                  <span className="w-[18px] h-[18px] rounded-full bg-[#C9A227] flex items-center justify-center text-[10px] text-[#0A0A0A]">→</span>
-                </button>
-              </>
-            ) : (
-              <div className="text-center py-5">
-                <p className="text-[22px] font-extrabold text-[#0A0A0A] mb-2">Descargando...</p>
-                <p className="text-[13px] text-[#666]">Gracias. El PDF se esta descargando.</p>
               </div>
             )}
           </div>
         </div>
-      )}
+
+      </div>
+      </FadeIn>
     </section>
   );
 }
