@@ -7,10 +7,9 @@ import Logos from "@/components/Logos";
 import Evidence from "@/components/Evidence";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-
 export default function Home() {
   return (
-    <main>
+    <main style={{ overflowX: "hidden", maxWidth: "100vw" }}>
       <Nav />
       <Hero />
       <Problem />
