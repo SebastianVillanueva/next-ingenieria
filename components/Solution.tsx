@@ -80,7 +80,7 @@ export default function Solution() {
           </div>
           <FadeIn delay={800}>
             <p style={{ fontSize: isMobile ? "16px" : "20px", color: "#F8F7F4", lineHeight: 1.8, paddingTop: "8px" }}>
-              Un sistema operativo instalado por capas para desarrollar la capacidad operativa que los proyectos y organizaciones necesitan para crecer de forma confiable.
+              Un sistema operativo implementado por capas para desarrollar la capacidad operativa que los proyectos y organizaciones necesitan.
             </p>
           </FadeIn>
         </div>
