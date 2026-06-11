@@ -18,10 +18,12 @@ export default function Contact() {
   const [form, setForm] = useState({ nombre: "", empresa: "", problema: "", celular: "", correo: "" });
   const [submitted, setSubmitted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
     check();
+    setMounted(true);
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
