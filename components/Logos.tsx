@@ -17,7 +17,7 @@ export default function Logos() {
       <div style={{ overflow: "hidden", width: "100%" }}>
         <div className="marquee-track">
           {track.map((logo, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, padding: "0 20px" }}>
+            <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, padding: "0 32px" }}>
               <Image src={logo.src} alt={logo.alt} height={64} width={192} style={{ objectFit: "contain", opacity: 0.9 }} />
             </div>
           ))}

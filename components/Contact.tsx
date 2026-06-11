@@ -78,7 +78,7 @@ export default function Contact() {
           {/* Ficha personal */}
           <div style={{ background: "#1A1A1A", border: "1px solid #333", borderRadius: "10px", padding: "10px 16px", width: "100%", boxSizing: "border-box" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flexShrink: 0, alignItems: "center", justifyContent: "space-between", height: "100%" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flexShrink: 0, justifyContent: "space-between", height: "100%" }}>
                 <div style={{ position: "relative", width: "72px", height: "72px", borderRadius: "8px", overflow: "hidden" }}>
                   <Image src="/foto-perfil.png" alt="Sebastian Villanueva" fill sizes="72px" style={{ objectFit: "cover", objectPosition: "center top" }} />
                 </div>
