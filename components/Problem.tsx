@@ -88,7 +88,7 @@ export default function Problem() {
         <FadeIn delay={0}>
           <div style={{ paddingTop: "20px", borderTop: "0.5px solid #C8C6C0", maxWidth: "800px", margin: "0 auto", textAlign: isMobile ? "left" : "center" }}>
             <p style={{ fontSize: isMobile ? "23px" : "34px", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.5 }}>
-              El problema empieza cuando la complejidad crece más rápido que la capacidad operativa de la organización
+              El problema empieza cuando la complejidad crece más rápido que la <span style={{background: "linear-gradient(to bottom, transparent 60%, rgba(255,213,0,0.9) 60%)", display: "inline"}}>capacidad operativa</span> de la organización
             </p>
           </div>
         </FadeIn>
