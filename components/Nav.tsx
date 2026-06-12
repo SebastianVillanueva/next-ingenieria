@@ -48,7 +48,7 @@ export default function Nav() {
         .nav-pill-mobile {
           position: absolute;
           top: 8px; left: 16px; right: 16px;
-          height: 44px;
+          height: 50px;
           background-color: rgba(200,200,200,0.35);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
@@ -60,6 +60,8 @@ export default function Nav() {
         .nav-links-desktop { display: flex; }
         .nav-cta-mobile { display: none; }
         @media (max-width: 767px) {
+          .nav-pill-mobile { top: 6px !important; left: 6px !important; right: 6px !important; height: 52px !important; }
+          
           .nav-pill-desktop { display: none; }
           .nav-links-desktop { display: none !important; }
           .nav-cta-mobile { display: block; }
