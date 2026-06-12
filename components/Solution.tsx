@@ -53,7 +53,7 @@ export default function Solution() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
-    check();
+    setTimeout(check, 50);
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
