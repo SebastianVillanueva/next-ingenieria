@@ -6,17 +6,12 @@ export const metadata: Metadata = {
   description: "NEXT diseña e instala sistemas operativos para constructoras e inmobiliarias que necesitan mejorar confiabilidad, visibilidad y capacidad de ejecución.",
 };
 
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" style={{ overflowX: "hidden" }}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
