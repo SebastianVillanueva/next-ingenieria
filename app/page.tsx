@@ -6,6 +6,7 @@ import Process from "@/components/Process";
 import Logos from "@/components/Logos";
 import Evidence from "@/components/Evidence";
 import Contact from "@/components/Contact";
+import Participaciones from "@/components/Participaciones";
 import Footer from "@/components/Footer";
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Process />
       <Logos />
       <Evidence />
+      <Participaciones />
       <Contact />
       <Footer />
     </main>

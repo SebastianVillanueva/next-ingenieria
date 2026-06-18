@@ -55,9 +55,9 @@ export default function Evidence() {
   };
 
   return (
-    <section id="evidence" style={{ backgroundColor: "#F8F7F4", padding: isMobile ? "48px 24px" : "80px 48px", borderBottom: "0.5px solid #D0CEC8" }}>
-      <h2 style={{ fontSize: isMobile ? "28px" : "42px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#0A0A0A", marginBottom: isMobile ? "32px" : "72px" }}>
-        Resultados operacionales medidos
+    <section id="evidence" style={{ backgroundColor: "#F8F7F4", padding: isMobile ? "48px 24px" : "80px 48px 80px 48px", borderBottom: "0.5px solid #D0CEC8" }}>
+      <h2 style={{ fontSize: isMobile ? "28px" : "42px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#0A0A0A", maxWidth: "1100px", margin: isMobile ? "0 0 32px 0" : "0 auto 72px auto" }}>
+        Casos de éxito
       </h2>
 
       <FadeIn direction="right">
@@ -67,9 +67,9 @@ export default function Evidence() {
           <div style={{ background: "#F8F7F4", border: "0.5px solid #C8C6C0", borderRadius: "8px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", flex: 1 }}>
               <div style={{ padding: "20px", display: "flex", flexDirection: "column", gap: "12px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  <img src="/logo-cosapi.png" alt="COSAPI" style={{ height: "28px", objectFit: "contain" }} />
-                  <img src="/logo-angloamerican.png" alt="Anglo American" style={{ height: "28px", objectFit: "contain" }} />
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px" }}>
+                  <img src="/logo-cosapi.png" alt="COSAPI" style={{ height: "52px", objectFit: "contain" }} />
+                  <img src="/logo-angloamerican.png" alt="Anglo American" style={{ height: "40px", objectFit: "contain" }} />
                 </div>
                 <h3 style={{ fontSize: isMobile ? "17px" : "21px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1.2, margin: 0 }}>
                   Diseño y optimización de un sistema de producción complejo
@@ -104,21 +104,23 @@ export default function Evidence() {
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "16px", marginBottom: "24px", paddingBottom: "20px", borderBottom: "0.5px solid #C8C6C0" }}>
-                <img src="/logo-universidad-lima.png" alt="Universidad de Lima" style={{ height: isMobile ? "40px" : "52px", objectFit: "contain" }} />
-                <img src="/logo-stanford.png" alt="Stanford Engineering" style={{ height: isMobile ? "40px" : "52px", objectFit: "contain", flexShrink: 0 }} />
+                <img src="/logo-universidad-lima.png" alt="Universidad de Lima" style={{ height: isMobile ? "48px" : "64px", objectFit: "contain" }} />
+                <img src="/logo-stanford.png" alt="Stanford Engineering" style={{ height: isMobile ? "48px" : "64px", objectFit: "contain", flexShrink: 0 }} />
               </div>
               <p style={{ fontSize: "13px", color: "#888888", letterSpacing: "0.05em", marginBottom: "8px" }}>Certificación Diseño y Construcción Virtual (VDC) 2026</p>
               <h3 style={{ fontSize: isMobile ? "18px" : "22px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1.2, margin: "0 0 8px 0" }}>
                 Gestión de Producción de Proyectos (PPM)
               </h3>
               <p style={{ fontSize: "15px", color: "#888888", lineHeight: 1.6, margin: "0 0 20px 0" }}>Presentación en Semana Introductoria</p>
-              <div style={{ display: "flex", flexDirection: "column", marginBottom: "20px" }}>
-                {[["Autor", "Sebastian Villanueva"], ["Rol", "Mentor VDC"]].map(([k, v]) => (
-                  <div key={k} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "0.5px solid #D0CEC8", padding: "10px 0" }}>
-                    <span style={{ fontSize: "10px", color: "#888888", letterSpacing: "0.1em", textTransform: "uppercase" }}>{k}</span>
-                    <span style={{ fontSize: "14px", color: "#0A0A0A", fontWeight: 500 }}>{v}</span>
-                  </div>
-                ))}
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px", marginBottom: "20px" }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
+                  <span style={{ fontSize: "10px", color: "#888888", letterSpacing: "0.1em", textTransform: "uppercase", minWidth: "40px" }}>Autor</span>
+                  <span style={{ fontSize: "14px", color: "#0A0A0A", fontWeight: 400 }}>Sebastian Villanueva</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
+                  <span style={{ fontSize: "10px", color: "#888888", letterSpacing: "0.1em", textTransform: "uppercase", minWidth: "40px" }}>Rol</span>
+                  <span style={{ fontSize: "14px", color: "#0A0A0A", fontWeight: 400 }}>Mentor VDC</span>
+                </div>
               </div>
               <p style={{ fontSize: "17px", color: "#666666", lineHeight: 1.8 }}>
                 Caso de estudio presentado en la certificación VDC 2026. Análisis de variabilidad operativa en proyecto de infraestructura minera, con metodología PPM aplicada en campo.

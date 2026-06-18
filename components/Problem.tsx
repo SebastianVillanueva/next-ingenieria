@@ -51,10 +51,10 @@ export default function Problem() {
 
         <FadeIn delay={0}>
           <h2 style={{ fontSize: isMobile ? "26px" : "38px", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.03em", color: "#0A0A0A", textAlign: isMobile ? "left" : "center", whiteSpace: "normal" }}>
-            Los proyectos son cada vez más complejos y exigentes.
+            Los proyectos son cada vez más exigentes.
           </h2>
           <p style={{ fontSize: isMobile ? "23px" : "34px", fontWeight: 800, color: "#555555", textAlign: isMobile ? "left" : "center", marginTop: "12px", letterSpacing: "-0.03em", lineHeight: 1.2 }}>
-            Las operaciones no siempre evolucionan al mismo ritmo.
+            Las operaciones no evolucionan al mismo ritmo.
           </p>
         </FadeIn>
 
@@ -88,7 +88,8 @@ export default function Problem() {
         <FadeIn delay={0}>
           <div style={{ paddingTop: "20px", borderTop: "0.5px solid #C8C6C0", maxWidth: "800px", margin: "0 auto", textAlign: isMobile ? "left" : "center" }}>
             <p style={{ fontSize: isMobile ? "23px" : "34px", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.5 }}>
-              El problema empieza cuando la complejidad crece más rápido que la <span style={{background: "linear-gradient(to bottom, transparent 60%, rgba(255,213,0,0.9) 60%)", display: "inline"}}>capacidad operativa</span> de la organización
+              El problema aparece cuando las exigencias del proyecto
+superan la <span style={{background: "linear-gradient(to bottom, transparent 60%, rgba(255,213,0,0.9) 60%)", display: "inline"}}>capacidad operativa</span> disponible para ejecutarlo.
             </p>
           </div>
         </FadeIn>

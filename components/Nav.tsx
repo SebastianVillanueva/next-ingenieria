@@ -11,6 +11,14 @@ const links = [
 export default function Nav() {
   const [dark, setDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    setTimeout(checkMobile, 50);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 120);
@@ -20,12 +28,18 @@ export default function Nav() {
 
   useEffect(() => {
     const solution = document.getElementById("solution");
-    if (!solution) return;
+    const contact = document.getElementById("contact");
     const observer = new IntersectionObserver(
-      ([entry]) => setDark(entry.isIntersecting),
+      (entries) => {
+        const anyDark = entries.some(e => e.isIntersecting);
+        if (entries.some(e => e.target.id === "solution" || e.target.id === "contact")) {
+          setDark(anyDark);
+        }
+      },
       { threshold: 0.1 }
     );
-    observer.observe(solution);
+    if (solution) observer.observe(solution);
+    if (contact) observer.observe(contact);
     return () => observer.disconnect();
   }, []);
 
@@ -102,7 +116,7 @@ export default function Nav() {
         </div>
 
         {/* Logo */}
-        <a href="#hero" style={{ textDecoration: "none" }}>
+        <a href="#hero" style={{ textDecoration: "none", marginRight: isMobile ? "-8px" : "0" }}>
           <Image src="/logo-next.png" alt="NEXT" width={56} height={52} style={{ objectFit: "contain", filter: dark ? "brightness(0) invert(1)" : "none", transition: "filter 0.3s ease" }} />
         </a>
       </div>

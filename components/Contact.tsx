@@ -72,7 +72,7 @@ export default function Contact() {
               Evalúa tu <span style={{ color: "#2563EB" }}>Sistema de Producción</span>
             </h2>
             <p style={{ fontSize: "16px", color: "#F8F7F4", lineHeight: 1.9, margin: 0 }}>
-              El punto de partida es entender el sistema de producción para poder aumentar la capacidad operativa.
+              El primer paso es entender qué está limitando la capacidad operativa de tu proyecto u organización.
             </p>
           </div>
           {/* Ficha personal */}
@@ -99,15 +99,15 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" style={{ backgroundColor: "#0A0A0A", padding: "80px 0px 0px 48px" }}>
+    <section id="contact" style={{ backgroundColor: "#0A0A0A", padding: "80px 0px 0px 48px", paddingBottom: "0" }}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "start" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "48px", paddingBottom: "80px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "48px", paddingBottom: "40px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "60px" }}>
             <p style={{ fontSize: "16px", color: "#888888", lineHeight: 1.9, margin: "0 0 16px 0" }}>Cada proyecto enfrenta desafios distintos</p>
             <h2 style={{ fontSize: "42px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#F8F7F4", margin: "0 0 16px 0" }}>
               Evalúa tu <span style={{ color: "#2563EB" }}>Sistema de Producción</span>
             </h2>
-            <p style={{ fontSize: "18px", color: "#F8F7F4", lineHeight: 1.9, margin: 0 }}>El punto de partida es entender el sistema de producción para poder aumentar la capacidad operativa.</p>
+            <p style={{ fontSize: "18px", color: "#F8F7F4", lineHeight: 1.9, margin: 0 }}>El primer paso es entender qué está limitando la capacidad operativa de tu proyecto u organización.</p>
           </div>
           <div style={{ background: "#1A1A1A", border: "1px solid #F8F7F4", borderRadius: "10px", padding: "20px 24px", display: "flex", alignItems: "center", gap: "20px", maxWidth: "480px" }}>
             <div style={{ position: "relative", width: "120px", height: "120px", borderRadius: "10px", overflow: "hidden", flexShrink: 0 }}>
