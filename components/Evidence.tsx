@@ -41,6 +41,10 @@ export default function Evidence() {
   }, []);
 
   const handleDownload = async () => {
+    if (!leadForm.nombre.trim() || !leadForm.email.trim()) {
+      alert("Por favor completa tu nombre y correo para descargar.");
+      return;
+    }
     await fetch(FORMSPREE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
