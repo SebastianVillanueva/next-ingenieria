@@ -4,6 +4,28 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "NEXT — Operational Intelligence for development & construction",
   description: "NEXT diseña e instala sistemas operativos para constructoras e inmobiliarias que necesitan mejorar confiabilidad, visibilidad y capacidad de ejecución.",
+  openGraph: {
+    title: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
+    description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y capacidad de ejecución.",
+    url: "https://nextperu.pe",
+    siteName: "NEXT",
+    images: [
+      {
+        url: "https://nextperu.pe/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
+      },
+    ],
+    locale: "es_PE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
+    description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y capacidad de ejecución.",
+    images: ["https://nextperu.pe/og-image.jpg"],
+  },
 };
 
 
