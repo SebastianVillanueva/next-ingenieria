@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NEXT — Operational Intelligence for development & construction",
-  description: "NEXT diseña e instala sistemas operativos para constructoras e inmobiliarias que necesitan mejorar confiabilidad, visibilidad y capacidad de ejecución.",
+  title: "NEXT — Sistemas de producción para desarrolladoras",
+  description: "Diseñamos e implementamos sistemas de producción para desarrolladoras y constructoras que necesitan mejorar plazo, costo y rentabilidad.",
   openGraph: {
     title: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
     description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y rentabilidad.",
