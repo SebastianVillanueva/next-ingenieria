@@ -34,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" style={{ overflowX: "hidden" }}>
       <head>
         
+        <meta name="google-site-verification" content="sljTNHlV8EjWodFAUqQxZ26dxQpiRT-Pop6avrQl0Sc" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
