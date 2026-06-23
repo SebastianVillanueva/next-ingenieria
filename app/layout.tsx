@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "NEXT diseña e instala sistemas operativos para constructoras e inmobiliarias que necesitan mejorar confiabilidad, visibilidad y capacidad de ejecución.",
   openGraph: {
     title: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
-    description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y capacidad de ejecución.",
+    description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y rentabilidad.",
     url: "https://nextperu.pe",
     siteName: "NEXT",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
-    description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y capacidad de ejecución.",
+    description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y rentabilidad.",
     images: ["https://nextperu.pe/og-image.jpg"],
   },
 };
