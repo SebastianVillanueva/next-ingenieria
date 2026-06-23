@@ -8,6 +8,7 @@ import Evidence from "@/components/Evidence";
 import Contact from "@/components/Contact";
 import Participaciones from "@/components/Participaciones";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 export default function Home() {
   return (
     <main style={{ overflowX: "hidden", maxWidth: "100vw" }}>
@@ -21,6 +22,7 @@ export default function Home() {
       <Participaciones />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }
