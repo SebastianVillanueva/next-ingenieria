@@ -50,7 +50,7 @@ export default function Process() {
           <FadeIn delay={200} direction="left">
             <div style={{ maxWidth: isMobile ? "200px" : "100%", margin: isMobile ? "0 auto" : "0" }}>
               <div style={{ position: "relative", width: "100%", aspectRatio: "2/3", borderRadius: "4px", overflow: "hidden", background: "#0A0A0A" }}>
-                <Image src="/foto-perfil.png" alt="Sebastian Villanueva" fill sizes={isMobile ? "200px" : "33vw"} style={{ objectFit: "cover", objectPosition: "center top" }} />
+                <Image src="/foto-perfil.png" alt="Sebastian Villanueva consultor sistemas de producción construcción Perú" fill sizes={isMobile ? "200px" : "33vw"} style={{ objectFit: "cover", objectPosition: "center top" }} />
               </div>
             </div>
           </FadeIn>

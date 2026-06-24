@@ -86,7 +86,7 @@ export default function Evidence() {
                 </p>
               </div>
               <div style={{ position: "relative", background: "#111827", minHeight: isMobile ? "200px" : "320px" }}>
-                <Image src="/quellaveco1.jpg" alt="Proyecto Quellaveco" fill sizes={isMobile ? "100vw" : "25vw"} style={{ objectFit: "cover", objectPosition: "center" }} />
+                <Image src="/quellaveco1.jpg" alt="Optimización sistema de producción Torre de Captación Quellaveco COSAPI" fill sizes={isMobile ? "100vw" : "25vw"} style={{ objectFit: "cover", objectPosition: "center" }} />
               </div>
             </div>
             {/* Métricas */}

@@ -88,7 +88,7 @@ export default function Solution() {
             </div>
             <FadeIn delay={300} direction="right">
               <div style={{ position: "relative", width: "100%", height: isMobile ? "380px" : "480px", borderRadius: "4px", overflow: "hidden" }}>
-                <Image src="/proceso-obra.jpg" alt="NEXT en obra" fill sizes={isMobile ? "100vw" : "50vw"} style={{ objectFit: "contain", objectPosition: "center center" }} />
+                <Image src="/proceso-obra.jpg" alt="Sistema de producción NEXT en obra de edificación Lima Perú" fill sizes={isMobile ? "100vw" : "50vw"} style={{ objectFit: "contain", objectPosition: "center center" }} />
               </div>
             </FadeIn>
           </div>
