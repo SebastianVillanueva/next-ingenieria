@@ -37,7 +37,7 @@ const layers = [
   {
     num: "02", tag: "Estrategia",
     title: "Estrategia operacional y métricas",
-    desc: "Confiabilidad de plazo. Integración obra y negocio.",
+    desc: "Control de plazo. Integración de obra y negocio.",
     includes: [{ label: "Capa 01", highlight: false }, { label: "Capa 02", highlight: false }],
     includeText: "Todo lo anterior · Estrategia VDC · Métricas · Sistemas de información",
   },
@@ -79,7 +79,7 @@ export default function Solution() {
               </FadeIn>
               <FadeIn delay={400}>
                 <p style={{ fontSize: isMobile ? "22px" : "32px", fontWeight: 600, color: "#F8F7F4", lineHeight: 1.1, marginBottom: "4px" }}>
-                  Tres capas acumulativas.
+                  Tres capas acumulativas<br />que se refuerzan entre sí.
                 </p>
                 <p style={{ fontSize: isMobile ? "22px" : "32px", fontWeight: 600, color: "#F8F7F4", lineHeight: 1.1 }}>
                   El diagnóstico define la entrada.

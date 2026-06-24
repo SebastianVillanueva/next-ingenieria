@@ -71,7 +71,7 @@ export default function Process() {
                   Especialista en diseño y optimización de sistemas de producción para proyectos y organizaciones.
                 </p>
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Ha participado en proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile) y San Gabriel (Perú), desarrollando iniciativas de mejora operacional, gestión de información y tecnología desde la Gerencia de Innovación, Procesos y TI de COSAPI.
+                  Mi experiencia incluye proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile) y San Gabriel (Perú), desarrollando iniciativas de mejora operacional, gestión de información y tecnología desde la Gerencia de Innovación, Procesos y TI de COSAPI.
                 </p>
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
                   Su experiencia se centra en el desarrollo de capacidad operativa para organizaciones que enfrentan proyectos cada vez más exigentes.
