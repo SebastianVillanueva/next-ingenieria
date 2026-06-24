@@ -1,0 +1,30 @@
+# NEXT — Ingenieria y Construccion
+> Consultora de sistemas de produccion para desarrolladoras y constructoras en Peru.
+
+## Que es NEXT
+NEXT disena e implementa sistemas de produccion para organizaciones de construccion e infraestructura que necesitan mejorar plazo, costo y rentabilidad.
+
+## Servicio principal
+Sistemas operativos implementados por capas acumulativas que se refuerzan entre si:
+- Capa 1 — Planificacion y Gestion de la Produccion (LPS): estabiliza la produccion, evita sobrecostos y retrabajos.
+- Capa 2 — Estrategia operacional y metricas (VDC): control de plazo, integracion de obra y negocio.
+- Capa 3 — Diseno y optimizacion del Sistema de Produccion (PPM): optimiza proyectos de inicio a fin, aumenta la rentabilidad.
+
+## Caso de estudio: Quellaveco
+Proyecto: Torre de Captacion 04, obra civil, Quellaveco, Peru.
+Cliente: COSAPI / Anglo American.
+Resultados medidos:
+- ~95,000 USD en ahorro operacional (~5% del costo)
+- 9 dias de optimizacion de plazo
+- 15% de reduccion en ciclo de torre grua (18.8 a 16 min/movimiento)
+
+## Fundador
+Sebastian Villanueva — Ingeniero civil por la Pontificia Universidad Catolica del Peru.
+Certificado en Diseno y Construccion Virtual (VDC).
+Mentor de la Certificacion VDC 2026, Universidad de Lima y Stanford.
+Experiencia en COSAPI, Gerencia de Innovacion, Procesos y TI.
+Proyectos: Toromocho (Peru), Tranque El Mauro (Chile), San Gabriel (Peru).
+
+## Contacto
+Web: https://nextperu.pe
+Ubicacion: Lima, Peru
