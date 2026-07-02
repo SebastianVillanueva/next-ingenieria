@@ -5,7 +5,7 @@ import Image from "next/image";
 const logos = [
   { src: "/logo-cosapi.png", alt: "Cosapi" },
   { src: "/logo-semcocad.png", alt: "SemcoCAD" },
-  { src: "/logo-uk-healthcare.png", alt: "UK Healthcare Alliance" },
+  { src: "/logo-4E.png", alt: "4E", small: true },
   { src: "/logo-universidad-lima.png", alt: "Universidad de Lima" },
   { src: "/logo-corporacion.jpg", alt: "Corporacion", small: true },
 ];
