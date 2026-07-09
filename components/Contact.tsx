@@ -80,7 +80,7 @@ export default function Contact() {
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flexShrink: 0, justifyContent: "space-between", height: "100%" }}>
                 <div style={{ position: "relative", width: "72px", height: "72px", borderRadius: "8px", overflow: "hidden" }}>
-                  <Image src="/foto-perfil.png" alt="Sebastian Villanueva consultor sistemas de producción construcción Perú" fill sizes="72px" style={{ objectFit: "cover", objectPosition: "center top" }} />
+                  <Image src="/foto-perfil-2.jpeg" alt="Sebastian Villanueva consultor sistemas de producción construcción Perú" fill sizes="72px" style={{ objectFit: "cover", objectPosition: "center 5%", transform: "scale(1.9)" }} />
                 </div>
                 <a href="https://www.linkedin.com/in/sebastianvillanueva01/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "9px", color: "#F8F7F4", background: "#0A0A0A", border: "0.5px solid #444", borderRadius: "5px", padding: "6px 10px", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 500, whiteSpace: "nowrap" }}>LinkedIn</a>
               </div>
@@ -111,7 +111,7 @@ export default function Contact() {
           </div>
           <div style={{ background: "#1A1A1A", border: "1px solid #F8F7F4", borderRadius: "10px", padding: "20px 24px", display: "flex", alignItems: "center", gap: "20px", maxWidth: "480px" }}>
             <div style={{ position: "relative", width: "120px", height: "120px", borderRadius: "10px", overflow: "hidden", flexShrink: 0 }}>
-              <Image src="/foto-perfil.png" alt="Sebastian Villanueva consultor sistemas de producción construcción Perú" fill sizes="72px" style={{ objectFit: "cover", objectPosition: "center top" }} />
+              <Image src="/foto-perfil-2.jpeg" alt="Sebastian Villanueva consultor sistemas de producción construcción Perú" fill sizes="72px" style={{ objectFit: "cover", objectPosition: "center 5%", transform: "scale(1.9)" }} />
             </div>
             <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "18px" }}>
               <p style={{ fontSize: "9px", color: "#F8F7F4", letterSpacing: "0.15em", textTransform: "uppercase", margin: 0 }}>Consultor principal & Fundador</p>

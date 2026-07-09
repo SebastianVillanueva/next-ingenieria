@@ -50,7 +50,7 @@ export default function Process() {
           <FadeIn delay={200} direction="left">
             <div style={{ maxWidth: isMobile ? "200px" : "100%", margin: isMobile ? "0 auto" : "0" }}>
               <div style={{ position: "relative", width: "100%", aspectRatio: "2/3", borderRadius: "4px", overflow: "hidden", background: "#0A0A0A" }}>
-                <Image src="/foto-perfil.png" alt="Sebastian Villanueva consultor sistemas de producción construcción Perú" fill sizes={isMobile ? "200px" : "33vw"} style={{ objectFit: "cover", objectPosition: "center top" }} />
+                <Image src="/foto-perfil-2.jpeg" alt="Sebastian Villanueva consultor sistemas de producción construcción Perú" fill sizes={isMobile ? "200px" : "33vw"} style={{ objectFit: "cover", objectPosition: "center 15%" }} />
               </div>
             </div>
           </FadeIn>
@@ -71,7 +71,7 @@ export default function Process() {
                   Especialista en diseño y optimización de sistemas de producción para proyectos y organizaciones.
                 </p>
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Mi experiencia incluye proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile) y San Gabriel (Perú), desarrollando iniciativas de mejora operacional, gestión de información y tecnología desde la Gerencia de Innovación, Procesos y TI de COSAPI.
+                  Su experiencia incluye proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile) y San Gabriel (Perú), desarrollando iniciativas de mejora operacional, gestión de información y tecnología desde la Gerencia de Innovación, Procesos y TI de COSAPI.
                 </p>
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
                   Su experiencia se centra en el desarrollo de capacidad operativa para organizaciones que enfrentan proyectos cada vez más exigentes.
@@ -80,7 +80,7 @@ export default function Process() {
                   Certificado en Diseño y Construcción Virtual (VDC) y mentor de la certificación VDC 2026.
                 </p>
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Ingeniero civil por la Pontificia Universidad Católica del Perú.
+                  Ingeniero civil titulado y colegiado por la Pontificia Universidad Católica del Perú.
                 </p>
               </div>
             </div>
