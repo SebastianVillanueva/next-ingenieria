@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NEXT — Sistemas de producción para desarrolladoras",
+  title: "NEXT — Sistemas de producción para minería y construcción",
   description: "Diseñamos e implementamos sistemas de producción para desarrolladoras y constructoras que necesitan mejorar plazo, costo y rentabilidad.",
   openGraph: {
-    title: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
+    title: "NEXT — Sistemas de producción para minería y construcción",
     description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y rentabilidad.",
     url: "https://nextperu.pe",
     siteName: "NEXT",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: "https://nextperu.pe/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
+        alt: "NEXT — Sistemas de producción para minería y construcción",
       },
     ],
     locale: "es_PE",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEXT — Sistemas de producción para desarrolladoras y constructoras",
+    title: "NEXT — Sistemas de producción para minería y construcción",
     description: "Diseñamos e implementamos sistemas de producción para mejorar plazo, costo y rentabilidad.",
     images: ["https://nextperu.pe/og-image.jpg"],
   },
