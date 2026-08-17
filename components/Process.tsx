@@ -45,7 +45,7 @@ export default function Process() {
           </h2>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "0.7fr 2fr", gap: isMobile ? "32px" : "64px", alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "0.7fr 2fr", gap: isMobile ? "32px" : "64px", alignItems: "center" }}>
 
           <FadeIn delay={200} direction="left">
             <div style={{ maxWidth: isMobile ? "200px" : "100%", margin: isMobile ? "0 auto" : "0" }}>
@@ -67,20 +67,20 @@ export default function Process() {
               </div>
               <div style={{ width: "40px", height: "1px", background: "#C8C6C0" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Especialista en diseño y optimización de sistemas de producción para proyectos y organizaciones.
-                </p>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Su experiencia incluye proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile) y San Gabriel (Perú), desarrollando iniciativas de mejora operacional, gestión de información y tecnología desde la Gerencia de Innovación, Procesos y TI de COSAPI.
-                </p>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Su experiencia se centra en el desarrollo de capacidad operativa para organizaciones que enfrentan proyectos cada vez más exigentes.
-                </p>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Certificado en Diseño y Construcción Virtual (VDC) y mentor de la certificación VDC 2026.
-                </p>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#0A0A0A", fontWeight: 700, lineHeight: 1.8, margin: 0 }}>
                   Ingeniero civil titulado y colegiado por la Pontificia Universidad Católica del Perú.
+                </p>
+                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                  Consultor Principal y Fundador de NEXT Ingeniería y Construcción, consultora especializada en sistemas de producción para aumentar la capacidad operativa de empresas desarrolladoras, constructoras e industriales.
+                </p>
+                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                  Actualmente es mentor de la Certificación VDC 2026 (Universidad de Lima y Stanford), acompañando directamente a 13 profesionales entre coordinadores, jefes, residentes, gerentes y dueños de empresa en la aplicación de sistemas de producción (Capa 2 y 3 del Sistema Next) a sus propios proyectos. 10/13 profesionales utilizan como base la metodología de Last Planner System.
+                </p>
+                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                  Previamente se desempeñó en la Gerencia de Innovación, Procesos y Tecnología de COSAPI, optimizando sistemas de producción en proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile), San Gabriel (Perú) y Quellaveco (Perú); así como procesos de la organización en la sede central.
+                </p>
+                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                  Certificado en Diseño y Construcción Virtual (VDC) por la Universidad de Stanford. Desarrolló una <a href="http://hdl.handle.net/20.500.12404/32133" target="_blank" rel="noopener noreferrer" style={{ color: "#0A0A0A", textDecoration: "underline", textUnderlineOffset: "2px" }}>investigación</a> sobre gestión de información bajo el estándar ISO 19650 aplicada al proyecto La Videna de los Juegos Panamericanos Lima 2019.
                 </p>
               </div>
             </div>
