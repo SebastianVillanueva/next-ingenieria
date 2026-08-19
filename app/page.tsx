@@ -7,6 +7,7 @@ import Logos from "@/components/Logos";
 import Evidence from "@/components/Evidence";
 import Contact from "@/components/Contact";
 import Participaciones from "@/components/Participaciones";
+import Alliance from "@/components/Alliance";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Logos />
       <Evidence />
       <Participaciones />
+<Alliance />
       <Contact />
       <Footer />
       <WhatsAppButton />
