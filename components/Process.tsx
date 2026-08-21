@@ -71,7 +71,7 @@ export default function Process() {
                   Ingeniero civil titulado y colegiado por la Pontificia Universidad Católica del Perú.
                 </p>
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Consultor Principal y Fundador de NEXT Ingeniería y Construcción, consultora especializada en sistemas de producción para aumentar la capacidad operativa de empresas desarrolladoras, constructoras e industriales.
+                  Consultor Principal y Fundador de NEXT Ingeniería y Construcción, consultora especializada en sistemas de producción para aumentar la capacidad operativa de organizaciones de ingeniería, construcción y minería.
                 </p>
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
                   Actualmente es mentor de la Certificación VDC 2026 (Universidad de Lima y Stanford), acompañando directamente a 13 profesionales entre coordinadores, jefes, residentes, gerentes y dueños de empresa en la aplicación de sistemas de producción (Capa 2 y 3 del Sistema Next) a sus propios proyectos. 10/13 profesionales utilizan como base la metodología de Last Planner System.

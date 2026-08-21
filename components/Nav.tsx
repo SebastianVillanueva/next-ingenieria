@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   { label: "Evalúa tu sistema de producción", href: "#contact", isButton: true },
-  { label: "Método NEXT", href: "#solution" },
+  { label: "Sistema NEXT", href: "#solution" },
   { label: "Casos de éxito", href: "#evidence" },
 ];
 
