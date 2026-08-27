@@ -28,6 +28,7 @@ function FadeIn({ children, delay = 0, direction = "up" }: { children: React.Rea
 
 export default function Process() {
   const [isMobile, setIsMobile] = useState(false);
+  const [bioExpanded, setBioExpanded] = useState(false);
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
     setTimeout(check, 50);
@@ -40,7 +41,7 @@ export default function Process() {
       <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "40px" }}>
 
         <FadeIn delay={0}>
-          <h2 style={{ fontSize: isMobile ? "32px" : "42px", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#0A0A0A" }}>
+          <h2 style={{ fontSize: isMobile ? "32px" : "42px", fontWeight: 700, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#0A0A0A" }}>
             Liderazgo
           </h2>
         </FadeIn>
@@ -61,7 +62,7 @@ export default function Process() {
                 <p style={{ fontSize: "13px", color: "#888888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "8px" }}>
                   Consultor Principal & Fundador
                 </p>
-                <h3 style={{ fontSize: isMobile ? "28px" : "36px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1.1, letterSpacing: "-0.02em", margin: 0 }}>
+                <h3 style={{ fontSize: isMobile ? "28px" : "36px", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.1, letterSpacing: "-0.02em", margin: 0 }}>
                   Sebastian Villanueva
                 </h3>
               </div>
@@ -73,15 +74,26 @@ export default function Process() {
                 <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
                   Consultor Principal y Fundador de NEXT Ingeniería y Construcción, consultora especializada en sistemas de producción para aumentar la capacidad operativa de organizaciones de ingeniería, construcción y minería.
                 </p>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Actualmente es mentor de la Certificación VDC 2026 (Universidad de Lima y Stanford), acompañando directamente a 13 profesionales entre coordinadores, jefes, residentes, gerentes y dueños de empresa en la aplicación de sistemas de producción (Capa 2 y 3 del Sistema Next) a sus propios proyectos. 10/13 profesionales utilizan como base la metodología de Last Planner System.
-                </p>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Previamente se desempeñó en la Gerencia de Innovación, Procesos y Tecnología de COSAPI, optimizando sistemas de producción en proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile), San Gabriel (Perú) y Quellaveco (Perú); así como procesos de la organización en la sede central.
-                </p>
-                <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
-                  Certificado en Diseño y Construcción Virtual (VDC) por la Universidad de Stanford. Desarrolló una <a href="http://hdl.handle.net/20.500.12404/32133" target="_blank" rel="noopener noreferrer" style={{ color: "#0A0A0A", textDecoration: "underline", textUnderlineOffset: "2px" }}>investigación</a> sobre gestión de información bajo el estándar ISO 19650 aplicada al proyecto La Videna de los Juegos Panamericanos Lima 2019.
-                </p>
+                {bioExpanded && (
+                  <>
+                    <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                      Actualmente es mentor de la Certificación VDC 2026 (Universidad de Lima y Stanford), acompañando directamente a 13 profesionales entre coordinadores, jefes, residentes, gerentes y dueños de empresa en la aplicación de sistemas de producción (Capa 2 y 3 del Sistema Next) a sus propios proyectos. 10/13 profesionales utilizan como base la metodología de Last Planner System.
+                    </p>
+                    <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                      Previamente se desempeñó en la Gerencia de Innovación, Procesos y Tecnología de COSAPI, optimizando sistemas de producción en proyectos complejos de ingeniería y construcción como Toromocho (Perú), Tranque El Mauro (Chile), San Gabriel (Perú) y Quellaveco (Perú); así como procesos de la organización en la sede central.
+                    </p>
+                    <p style={{ fontSize: isMobile ? "15px" : "17px", color: "#444444", lineHeight: 1.8, margin: 0 }}>
+                      Certificado en Diseño y Construcción Virtual (VDC) por la Universidad de Stanford. Desarrolló una <a href="http://hdl.handle.net/20.500.12404/32133" target="_blank" rel="noopener noreferrer" style={{ color: "#0A0A0A", textDecoration: "underline", textUnderlineOffset: "2px" }}>investigación</a> sobre gestión de información bajo el estándar ISO 19650 aplicada al proyecto La Videna de los Juegos Panamericanos Lima 2019.
+                    </p>
+                  </>
+                )}
+                <button
+                  onClick={() => setBioExpanded(!bioExpanded)}
+                  style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "none", border: "none", padding: 0, marginTop: "4px", cursor: "pointer", fontSize: "13px", fontWeight: 700, color: "#0A0A0A", letterSpacing: "0.05em", textTransform: "uppercase", alignSelf: "flex-start" }}
+                >
+                  {bioExpanded ? "Ver menos" : "Ver más"}
+                  <span style={{ fontSize: "14px" }}>{bioExpanded ? "−" : "+"}</span>
+                </button>
               </div>
             </div>
           </FadeIn>

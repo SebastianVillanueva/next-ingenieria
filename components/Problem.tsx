@@ -50,7 +50,7 @@ export default function Problem() {
       <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
 
         <FadeIn delay={0}>
-          <h2 style={{ fontSize: isMobile ? "26px" : "38px", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.03em", color: "#0A0A0A", textAlign: isMobile ? "left" : "center", whiteSpace: "normal" }}>
+          <h2 style={{ fontSize: isMobile ? "26px" : "38px", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.03em", color: "#0A0A0A", textAlign: isMobile ? "left" : "center", whiteSpace: "normal" }}>
             Los proyectos son cada vez más exigentes.
           </h2>
           <p style={{ fontSize: isMobile ? "23px" : "34px", fontWeight: 800, color: "#555555", textAlign: isMobile ? "left" : "center", marginTop: "12px", letterSpacing: "-0.03em", lineHeight: 1.2 }}>

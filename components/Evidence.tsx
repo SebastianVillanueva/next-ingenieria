@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const FORMSPREE_URL = "https://formspree.io/f/mnjynrjd";
+const WHATSAPP_NUMBER = "51XXXXXXXXX"; // <-- reemplaza por tu número real (código de país + número, sin +)
 
 function FadeIn({ children, direction = "up" }: { children: React.ReactNode; direction?: "up" | "left" | "right" }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ function FadeIn({ children, direction = "up" }: { children: React.ReactNode; dir
 
 export default function Evidence() {
   const [showModal, setShowModal] = useState(false);
-  const [leadForm, setLeadForm] = useState({ nombre: "", email: "" });
+  const [leadForm, setLeadForm] = useState({ nombre: "", empresa: "" });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -40,27 +41,30 @@ export default function Evidence() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  const handleDownload = async () => {
-    if (!leadForm.nombre.trim() || !leadForm.email.trim()) {
-      alert("Por favor completa tu nombre y correo para descargar.");
+  const handleRequest = async () => {
+    if (!leadForm.nombre.trim() || !leadForm.empresa.trim()) {
+      alert("Por favor completa tu nombre y empresa para solicitar la presentacion.");
       return;
     }
-    await fetch(FORMSPREE_URL, {
+
+    // Registro silencioso del lead (no bloquea el flujo)
+    fetch(FORMSPREE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...leadForm, tipo: "Descarga presentacion Quellaveco" }),
-    });
+      body: JSON.stringify({ ...leadForm, tipo: "Solicitud presentacion Quellaveco via WhatsApp" }),
+    }).catch(() => {});
+
+    const mensaje = `Hola, quisiera recibir el caso de estudio de Quellaveco (Torre de Captación 04). Soy ${leadForm.nombre} de ${leadForm.empresa}.`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+
     setLeadSubmitted(true);
-    const link = document.createElement("a");
-    link.href = "/quellaveco-caso.pdf";
-    link.download = "Quellaveco-Caso-NEXT.pdf";
-    link.click();
-    setTimeout(() => { setShowModal(false); setLeadSubmitted(false); setLeadForm({ nombre: "", email: "" }); }, 2000);
+    setTimeout(() => { setShowModal(false); setLeadSubmitted(false); setLeadForm({ nombre: "", empresa: "" }); }, 1500);
   };
 
   return (
     <section id="evidence" style={{ backgroundColor: "#F8F7F4", padding: isMobile ? "48px 24px" : "80px 48px 80px 48px", borderBottom: "0.5px solid #D0CEC8" }}>
-      <h2 style={{ fontSize: isMobile ? "28px" : "42px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#0A0A0A", maxWidth: "1100px", margin: isMobile ? "0 0 32px 0" : "0 auto 72px auto" }}>
+      <h2 style={{ fontSize: isMobile ? "28px" : "42px", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#0A0A0A", maxWidth: "1100px", margin: isMobile ? "0 0 32px 0" : "0 auto 72px auto" }}>
         Casos de éxito
       </h2>
 
@@ -75,7 +79,7 @@ export default function Evidence() {
                   <img src="/logo-cosapi.png" alt="COSAPI" style={{ height: "52px", objectFit: "contain" }} />
                   <img src="/logo-angloamerican.png" alt="Anglo American" style={{ height: "40px", objectFit: "contain" }} />
                 </div>
-                <h3 style={{ fontSize: isMobile ? "17px" : "21px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1.2, margin: 0 }}>
+                <h3 style={{ fontSize: isMobile ? "17px" : "21px", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.2, margin: 0 }}>
                   Diseño y optimización de un sistema de producción complejo
                 </h3>
                 <p style={{ fontSize: "13px", color: "#888888", lineHeight: 1.6, margin: 0, letterSpacing: "0.05em" }}>
@@ -89,7 +93,7 @@ export default function Evidence() {
                 <Image src="/quellaveco1.jpg" alt="Optimización sistema de producción Torre de Captación Quellaveco COSAPI" fill sizes={isMobile ? "100vw" : "25vw"} style={{ objectFit: "cover", objectPosition: "center" }} />
               </div>
             </div>
-            {/* Métricas */}
+            {/* Metricas */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", background: "#0A0A0A", borderTop: "0.5px solid #2A2A2A" }}>
               {[
                 { val: "~95K", label: "USD ahorro operacional (~5%)" },
@@ -112,7 +116,7 @@ export default function Evidence() {
                 <img src="/logo-stanford.png" alt="Stanford Engineering" style={{ height: isMobile ? "48px" : "64px", objectFit: "contain", flexShrink: 0 }} />
               </div>
               <p style={{ fontSize: "13px", color: "#888888", letterSpacing: "0.05em", marginBottom: "8px" }}>Certificación Diseño y Construcción Virtual (VDC) 2026</p>
-              <h3 style={{ fontSize: isMobile ? "18px" : "22px", fontWeight: 800, color: "#0A0A0A", lineHeight: 1.2, margin: "0 0 8px 0" }}>
+              <h3 style={{ fontSize: isMobile ? "18px" : "22px", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.2, margin: "0 0 8px 0" }}>
                 Gestión de Producción de Proyectos (PPM)
               </h3>
               <p style={{ fontSize: "15px", color: "#888888", lineHeight: 1.6, margin: "0 0 20px 0" }}>Presentación en Semana Introductoria</p>
@@ -132,7 +136,7 @@ export default function Evidence() {
             </div>
             <div style={{ marginTop: "24px", paddingTop: "20px", borderTop: "0.5px solid #C8C6C0", display: "flex", justifyContent: "flex-end" }}>
               <button onClick={() => setShowModal(true)} style={{ display: "inline-flex", alignItems: "center", gap: "8px", paddingLeft: "14px", paddingRight: "8px", paddingTop: "7px", paddingBottom: "7px", borderRadius: "6px", fontSize: "10px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", background: "#0A0A0A", color: "#F8F7F4", border: "none" }}>
-                Descargar presentación
+                Solicita la presentación
                 <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "#C9A227", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "10px", color: "#0A0A0A" }}>&#8594;</span>
               </button>
             </div>
@@ -148,32 +152,25 @@ export default function Evidence() {
             {!leadSubmitted ? (
               <>
                 <p style={{ fontSize: "9px", color: "#888", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "12px" }}>Caso de estudio</p>
-                <h3 style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", marginBottom: "8px", lineHeight: 1.2 }}>Descarga la presentación</h3>
-                <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.7, marginBottom: "28px" }}>Ingresa tus datos para acceder al caso Quellaveco — Torre de Captación 04.</p>
+                <h3 style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", marginBottom: "8px", lineHeight: 1.2 }}>Solicita la presentación</h3>
+                <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.7, marginBottom: "28px" }}>Te contactaremos por WhatsApp con el caso Quellaveco - Torre de Captación 04.</p>
                 <div style={{ borderBottom: "0.5px solid #C8C6C0", padding: "12px 0" }}>
                   <label style={{ display: "block", fontSize: "9px", color: "#888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "6px" }}>Nombre completo</label>
                   <input type="text" placeholder="Tu nombre completo" value={leadForm.nombre} onChange={(e) => setLeadForm(p => ({ ...p, nombre: e.target.value }))} style={{ width: "100%", background: "transparent", fontSize: "14px", color: "#0A0A0A", outline: "none", border: "none" }} />
                 </div>
-                <div style={{ borderBottom: "0.5px solid #C8C6C0", padding: "12px 0" }}>
-                  <label style={{ display: "block", fontSize: "9px", color: "#888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "6px" }}>Correo o número celular</label>
-                  <input type="text" placeholder="Tu correo o celular" value={leadForm.email} onChange={(e) => setLeadForm(p => ({ ...p, email: e.target.value }))} style={{ width: "100%", background: "transparent", fontSize: "14px", color: "#0A0A0A", outline: "none", border: "none" }} />
+                <div style={{ borderBottom: "0.5px solid #C8C6C0", padding: "12px 0", marginBottom: "24px" }}>
+                  <label style={{ display: "block", fontSize: "9px", color: "#888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "6px" }}>Empresa</label>
+                  <input type="text" placeholder="Tu empresa" value={leadForm.empresa} onChange={(e) => setLeadForm(p => ({ ...p, empresa: e.target.value }))} style={{ width: "100%", background: "transparent", fontSize: "14px", color: "#0A0A0A", outline: "none", border: "none" }} />
                 </div>
-                <div style={{ padding: "16px 0", marginBottom: "8px" }}>
-                  <label style={{ display: "block", fontSize: "9px", color: "#888", textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "12px" }}>¿Te gustaría que te contactemos?</label>
-                  <div style={{ display: "flex", gap: "16px" }}>
-                    <button onClick={() => setLeadForm(p => ({ ...p, contactar: "si" } as any))} style={{ flex: 1, padding: "10px", borderRadius: "6px", border: (leadForm as any).contactar === "si" ? "1.5px solid #0A0A0A" : "0.5px solid #C8C6C0", background: (leadForm as any).contactar === "si" ? "#0A0A0A" : "transparent", color: (leadForm as any).contactar === "si" ? "#F8F7F4" : "#0A0A0A", fontSize: "12px", fontWeight: 600, cursor: "pointer" }}>Sí</button>
-                    <button onClick={() => setLeadForm(p => ({ ...p, contactar: "no" } as any))} style={{ flex: 1, padding: "10px", borderRadius: "6px", border: (leadForm as any).contactar === "no" ? "1.5px solid #0A0A0A" : "0.5px solid #C8C6C0", background: (leadForm as any).contactar === "no" ? "#0A0A0A" : "transparent", color: (leadForm as any).contactar === "no" ? "#F8F7F4" : "#0A0A0A", fontSize: "12px", fontWeight: 600, cursor: "pointer" }}>No por ahora</button>
-                  </div>
-                </div>
-                <button onClick={handleDownload} style={{ display: "inline-flex", alignItems: "center", gap: "8px", paddingLeft: "14px", paddingRight: "8px", paddingTop: "7px", paddingBottom: "7px", borderRadius: "6px", fontSize: "10px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", background: "#0A0A0A", color: "#F8F7F4", border: "none" }}>
-                  Descargar ahora
+                <button onClick={handleRequest} style={{ display: "inline-flex", alignItems: "center", gap: "8px", paddingLeft: "14px", paddingRight: "8px", paddingTop: "7px", paddingBottom: "7px", borderRadius: "6px", fontSize: "10px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", background: "#0A0A0A", color: "#F8F7F4", border: "none" }}>
+                  Solicitar por WhatsApp
                   <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "#C9A227", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "10px", color: "#0A0A0A" }}>&#8594;</span>
                 </button>
               </>
             ) : (
               <div style={{ textAlign: "center", padding: "20px 0" }}>
-                <p style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", marginBottom: "8px" }}>Descargando...</p>
-                <p style={{ fontSize: "13px", color: "#666" }}>Gracias. El PDF se esta descargando.</p>
+                <p style={{ fontSize: "22px", fontWeight: 800, color: "#0A0A0A", marginBottom: "8px" }}>Abriendo WhatsApp...</p>
+                <p style={{ fontSize: "13px", color: "#666" }}>Se abrirá una nueva pestaña para enviar tu solicitud.</p>
               </div>
             )}
           </div>

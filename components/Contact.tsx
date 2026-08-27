@@ -68,7 +68,7 @@ export default function Contact() {
         <div style={{ padding: "64px 24px 40px", display: "flex", flexDirection: "column", gap: "40px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <p style={{ fontSize: "16px", color: "#888888", lineHeight: 1.9, margin: 0 }}>Cada proyecto enfrenta desafios distintos</p>
-            <h2 style={{ fontSize: "32px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#F8F7F4", margin: 0 }}>
+            <h2 style={{ fontSize: "32px", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#F8F7F4", margin: 0 }}>
               Evalúa tu <span style={{ color: "#2563EB" }}>Sistema de Producción</span>
             </h2>
             <p style={{ fontSize: "16px", color: "#F8F7F4", lineHeight: 1.9, margin: 0 }}>
@@ -86,7 +86,7 @@ export default function Contact() {
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <p style={{ fontSize: "9px", color: "#888888", letterSpacing: "0.15em", textTransform: "uppercase", margin: "0 0 6px 0" }}>Consultor principal & Fundador</p>
-                <h3 style={{ fontSize: "17px", fontWeight: 800, color: "#F8F7F4", margin: "0 0 4px 0", lineHeight: 1.2 }}>Sebastian Villanueva</h3>
+                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#F8F7F4", margin: "0 0 4px 0", lineHeight: 1.2 }}>Sebastian Villanueva</h3>
                 <p style={{ fontSize: "11px", color: "#888888", margin: 0 }}>Next Ingeniería y Construcción</p>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function Contact() {
         <div style={{ display: "flex", flexDirection: "column", gap: "48px", paddingBottom: "40px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "60px" }}>
             <p style={{ fontSize: "16px", color: "#888888", lineHeight: 1.9, margin: "0 0 16px 0" }}>Cada proyecto enfrenta desafios distintos</p>
-            <h2 style={{ fontSize: "42px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#F8F7F4", margin: "0 0 16px 0" }}>
+            <h2 style={{ fontSize: "42px", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.05, color: "#F8F7F4", margin: "0 0 16px 0" }}>
               Evalúa tu <span style={{ color: "#2563EB" }}>Sistema de Producción</span>
             </h2>
             <p style={{ fontSize: "18px", color: "#F8F7F4", lineHeight: 1.9, margin: 0 }}>El primer paso es entender qué está limitando la capacidad operativa de tu proyecto u organización.</p>
@@ -115,7 +115,7 @@ export default function Contact() {
             </div>
             <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "18px" }}>
               <p style={{ fontSize: "9px", color: "#F8F7F4", letterSpacing: "0.15em", textTransform: "uppercase", margin: 0 }}>Consultor principal & Fundador</p>
-              <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#F8F7F4", margin: 0, lineHeight: 1.1 }}>Sebastian Villanueva</h3>
+              <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#F8F7F4", margin: 0, lineHeight: 1.1 }}>Sebastian Villanueva</h3>
               <p style={{ fontSize: "11px", color: "#F8F7F4", margin: 0 }}>Next Ingeniería y Construcción</p>
             </div>
             <a href="https://www.linkedin.com/in/sebastianvillanueva01/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", fontSize: "10px", color: "#F8F7F4", background: "#0A0A0A", border: "0.5px solid #0A0A0A", borderRadius: "5px", padding: "6px 12px", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 500, flexShrink: 0 }}>LinkedIn</a>

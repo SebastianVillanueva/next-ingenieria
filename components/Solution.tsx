@@ -65,11 +65,11 @@ export default function Solution() {
 
         {/* HEADER */}
         <div style={{ display: "flex", flexDirection: "column", gap: isMobile ? "24px" : "40px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? "24px" : "48px", alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? "24px" : "48px", alignItems: "center" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: isMobile ? "16px" : "24px" }}>
               <FadeIn delay={0}>
-                <h2 style={{ fontSize: isMobile ? "32px" : "42px", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#F8F7F4" }}>
-                  Nuestro Sistema
+                <h2 style={{ fontSize: isMobile ? "32px" : "42px", fontWeight: 700, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#F8F7F4" }}>
+                  Nuestro Sistema NEXT
                 </h2>
               </FadeIn>
               <FadeIn delay={200}>

@@ -49,7 +49,7 @@ export default function Participaciones() {
     <section style={{ backgroundColor: "#EEECEA", padding: isMobile ? "56px 0 56px" : "80px 0 80px", borderBottom: "0.5px solid #D0CEC8", overflow: "hidden" }}>
       <div style={{ padding: isMobile ? "0 24px" : "0 48px", marginBottom: "40px", display: "flex", justifyContent: "space-between", alignItems: "flex-end", maxWidth: "1100px", margin: "0 auto 40px" }}>
         <div>
-          <h2 style={{ fontSize: isMobile ? "32px" : "42px", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#0A0A0A", margin: 0 }}>
+          <h2 style={{ fontSize: isMobile ? "32px" : "42px", fontWeight: 700, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#0A0A0A", margin: 0 }}>
             En la industria
           </h2>
         </div>

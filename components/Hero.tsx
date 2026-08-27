@@ -29,11 +29,11 @@ export default function Hero() {
     return (
       <section id="hero" style={{ display: "flex", flexDirection: "column", borderBottom: "0.5px solid rgba(208,206,200,0.3)" }}>
         <div style={{ backgroundColor: "#F8F7F4", padding: "100px 24px 40px 24px", display: "flex", flexDirection: "column", gap: "16px" }}>
-          <h1 style={{ fontSize: "32px", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.02em", color: "#0A0A0A", margin: 0 }}>
-            Sistemas de producción para minería y construcción
+          <h1 style={{ fontSize: "32px", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.02em", color: "#0A0A0A", margin: 0 }}>
+            Sistemas de producción para desarrolladoras, constructoras y mineras
           </h1>
           <p style={{ fontSize: "17px", fontWeight: 600, color: "#333333", lineHeight: 1.5, margin: 0 }}>
-            Diseñados para controlar el plazo y reducir sobrecostos operativos
+            Diseñados para controlar el plazo y reducir costos operativos
           </p>
           <div style={{ display: "inline-flex", marginTop: "8px" }}>
             <Button variant="dark" href="#contact">
@@ -66,12 +66,12 @@ export default function Hero() {
       <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/hero-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(248,247,244,0.92) 0%, rgba(248,247,244,0.88) 35%, rgba(248,247,244,0.1) 55%, rgba(248,247,244,0) 70%)", zIndex: 1 }} />
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%)", zIndex: 2 }} />
-      <div style={{ position: "relative", zIndex: 3, display: "flex", flexDirection: "column", paddingTop: "140px", paddingBottom: "80px", maxWidth: "560px" }}>
-        <h1 style={{ fontSize: "52px", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.02em", color: "#0A0A0A", maxWidth: "640px", marginBottom: "20px" }}>
-          Sistemas de producción para minería y construcción
+      <div style={{ position: "relative", zIndex: 3, display: "flex", flexDirection: "column", paddingTop: "140px", paddingBottom: "80px", maxWidth: "720px" }}>
+        <h1 style={{ fontSize: "46px", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.02em", color: "#0A0A0A", maxWidth: "720px", marginBottom: "20px" }}>
+          Sistemas de producción<br />para desarrolladoras, constructoras y mineras
         </h1>
         <p style={{ fontSize: "21px", fontWeight: 600, color: "#333333", lineHeight: 1.5, maxWidth: "480px", marginBottom: "32px" }}>
-          Diseñados para controlar el plazo y reducir sobrecostos operativos
+          Diseñados para controlar el plazo y reducir costos operativos
         </p>
         <div style={{ display: "inline-flex" }}>
           <Button variant="dark" href="#contact">

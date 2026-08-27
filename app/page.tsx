@@ -21,7 +21,7 @@ export default function Home() {
       <Logos />
       <Evidence />
       <Participaciones />
-<Alliance />
+      <Alliance />
       <Contact />
       <Footer />
       <WhatsAppButton />
