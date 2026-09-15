@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
     return () => clearTimeout(timer);
   }, []);
 
-  const phone = "51987341145";
+  const phone = "51944071911";
   const message = encodeURIComponent("Hola Sebastian, me interesa conocer mas sobre NEXT.");
   const url = `https://wa.me/${phone}?text=${message}`;
 
