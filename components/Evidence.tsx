@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const FORMSPREE_URL = "https://formspree.io/f/mnjynrjd";
-const WHATSAPP_NUMBER = "51959258669";
+const WHATSAPP_NUMBER = "51989248277";
 
 function FadeIn({ children, direction = "up" }: { children: React.ReactNode; direction?: "up" | "left" | "right" }) {
   const ref = useRef<HTMLDivElement>(null);
