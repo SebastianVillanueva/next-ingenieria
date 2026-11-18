@@ -8,6 +8,9 @@ const links = [
   { label: "Casos de éxito", href: "#evidence" },
 ];
 
+// Plataforma privada para clientes (modelos BIM e incidencias)
+const PLATAFORMA = "https://plataforma.nextperu.pe";
+
 export default function Nav() {
   const [dark, setDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -73,7 +76,9 @@ export default function Nav() {
         }
         .nav-links-desktop { display: flex; }
         .nav-cta-mobile { display: none; }
+        .nav-clientes-mobile { display: none; }
         @media (max-width: 767px) {
+          .nav-clientes-mobile { display: inline-block; }
           .nav-pill-mobile { top: 6px !important; left: 6px !important; right: 6px !important; height: 52px !important; }
           
           .nav-pill-desktop { display: none; }
@@ -106,6 +111,10 @@ export default function Nav() {
               </a>
             )
           ))}
+          <span aria-hidden="true" style={{ width: "0.5px", height: "16px", backgroundColor: borderColor, transition: "background-color 0.3s ease" }} />
+          <a href={PLATAFORMA} style={{ fontSize: "11px", color: textColor, textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", transition: "color 0.3s ease" }}>
+            Acceso clientes ↗
+          </a>
         </nav>
 
         {/* CTA móvil */}
@@ -115,10 +124,18 @@ export default function Nav() {
           </a>
         </div>
 
-        {/* Logo */}
-        <a href="#hero" style={{ textDecoration: "none", marginRight: isMobile ? "-8px" : "0" }}>
-          <Image src="/logo-next.png" alt="NEXT" width={56} height={52} style={{ objectFit: "contain", filter: dark ? "brightness(0) invert(1)" : "none", transition: "filter 0.3s ease" }} />
-        </a>
+        {/* Acceso clientes (móvil) + Logo */}
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <a className="nav-clientes-mobile" href={PLATAFORMA} aria-label="Acceso clientes" title="Acceso clientes" style={{ color: textColor, lineHeight: 0, padding: "6px", transition: "color 0.3s ease" }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="5" y="11" width="14" height="10" rx="2" />
+              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+            </svg>
+          </a>
+          <a href="#hero" style={{ textDecoration: "none", marginRight: isMobile ? "-8px" : "0" }}>
+            <Image src="/logo-next.png" alt="NEXT" width={56} height={52} style={{ objectFit: "contain", filter: dark ? "brightness(0) invert(1)" : "none", transition: "filter 0.3s ease" }} />
+          </a>
+        </div>
       </div>
     </header>
   );
